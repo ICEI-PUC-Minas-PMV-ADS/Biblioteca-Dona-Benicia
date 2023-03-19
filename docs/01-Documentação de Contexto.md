@@ -244,6 +244,6 @@ Pós-condição:
 Um aviso na tela é exibido, notificando o usuário quanto ao prazo para substituição
 da obra.
 
-<img width="949" alt="Modelo Cascata" src="https://github.com/ICEI-PUC-Minas-PMV-ADS/Biblioteca-Dona-Benicia/blob/main/docs/img/Diagramadecasosdeuso1.png">
+<img width="949" alt="Diagrama de Casos de Uso" src="https://github.com/ICEI-PUC-Minas-PMV-ADS/Biblioteca-Dona-Benicia/blob/main/docs/img/Diagramadecasosdeuso1.png">
 
 
