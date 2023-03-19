@@ -8,6 +8,6 @@
 
 
 ## Wireframes
+
 Projeto Figma (https://www.figma.com/file/D9zqoNmEpRRAR0a5HWr18Z/Biblioteca?node-id=0-1)
-![Exemplo de Wireframe](img/wireframe-example.png)
 
