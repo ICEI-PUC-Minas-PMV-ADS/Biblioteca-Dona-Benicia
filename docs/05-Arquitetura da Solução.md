@@ -47,7 +47,7 @@ Uma outra forma de representar a interação entre os objetos é por meio do Dia
 acima, não enfatiza a ordem temporal. A utilização desse diagrama se deu para modelar o caso de uso Informar Perda de Obra que envolve os atores: Usuário e
 funcionário e os objetos Obra e Banco de Dados conforme pode-se observar abaixo:
 
-  ![Exemplo de Diagrama de comunicação](https://github.com/ICEI-PUC-Minas-PMV-ADS/Biblioteca-Dona-Benicia/blob/main/docs/img/diagramadecomunicacao.png)
+  ![Exemplo de Diagrama de comunicação](https://github.com/ICEI-PUC-Minas-PMV-ADS/Biblioteca-Dona-Benicia/blob/main/docs/img/diagdecom.png)
 
  Vale ressaltar que, mesmo a classe banco de dados não sendo representadano Diagrama de Classes, a mesma é muito importante para o funcionamento do sistema dessa forma, foi apresentada no Diagrama de Sequência, Comunicação e a seguir, no Diagrama de Atividades devido a sua importância nesse contexto.
 
