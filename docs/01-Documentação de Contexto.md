@@ -1,6 +1,6 @@
 # Introdução
 
-O projeto faz parte do Projeto de Desenvolvimento de um Sistema Sociotécnico Inovador e se propõe adesenvolver um sistema de apoio à gestão da Biblioteca Dona Benícia da Escola Estadual Ari da Franca. O desenvolvimento desse software baseia-se na descrição previamente fornecida que segue. 
+O projeto faz parte do Desenvolvimento de um Sistema Sociotécnico Inovador e se propõe a desenvolver um sistema de apoio à gestão da Biblioteca Dona Benícia da Escola Estadual Ari da Franca. O desenvolvimento desse software baseia-se na descrição previamente fornecida que segue. 
 
 “O sistema deve dar apoio à gestão de uma biblioteca escolar. Os títulos da biblioteca podem ser livros, periódicos e outros. Cada título tem um número de exemplares, um período máximo de empréstimo e uma descrição. Um título só pode ser emprestado a leitores cadastrados, que pagarão multas se ultrapassarem o período de empréstimo. Professores cadastrados podem pedir reservas de determinados títulos, para que sejam consultados apenas na biblioteca durante a oferta de determinada disciplina. O produto deve permitir o tratamento de perdas e dar apoio ao controle de assinaturas de periódicos.” 
 
