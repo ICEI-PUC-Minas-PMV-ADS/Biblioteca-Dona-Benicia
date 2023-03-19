@@ -47,9 +47,10 @@ Uma outra forma de representar a interação entre os objetos é por meio do Dia
 acima, não enfatiza a ordem temporal. A utilização desse diagrama se deu para modelar o caso de uso Informar Perda de Obra que envolve os atores: Usuário e
 funcionário e os objetos Obra e Banco de Dados conforme pode-se observar abaixo:
 
-[Diagrama de Sequência](https://github.com/ICEI-PUC-Minas-PMV-ADS/Biblioteca-Dona-Benicia/blob/main/docs/img/diagrmadeComunicacao.png)
-  
-  
+  ![Exemplo de Diagrama de comunicação](https://github.com/ICEI-PUC-Minas-PMV-ADS/Biblioteca-Dona-Benicia/blob/main/docs/img/diagramadecomunicacao.png)
+
+ Vale ressaltar que, mesmo a classe banco de dados não sendo representadano Diagrama de Classes, a mesma é muito importante para o funcionamento do sistema dessa forma, foi apresentada no Diagrama de Sequência, Comunicação e a seguir, no Diagrama de Atividades devido a sua importância nesse contexto.
+
 Por fim, o Diagrama de Atividades representado abaixo ilustra umafuncionalidade muito importante para os Professores que pe Solicitar reserva de obra para disciplina. Essa funcionalidade envolve uma série de atividades e mais de um estado final, isso porque a obra que o professor precisa pode não existir, nesse
 caso ele pode sugerir a compra ou assinatura. Além disso, caso exista, ela pode não estar disponível, o que gera ainda mais fluxos possíveis que atingem diferentes estados finais
 
