@@ -6,7 +6,7 @@ O projeto faz parte do Desenvolvimento de um Sistema Sociotécnico Inovador e se
 
 O modelo de processo adotado no projeto é o modelo Cascata. A escolha desse modelo ocorreu devido o mesmo ser melhor aplicável ao sistema, cujos requisitos são bem definidos e pelo fato de exigir uma documentação mais rígida e completa, ideal nesse caso, já que se trata de um trabalho acadêmico. Além disso, uma vantagem adicional de se utilizar esse modelo, é o fato de que o desenvolvimento do software se deu ao longo da disciplina de Engenharia de Software, cuja ementa segue o modelo cascata. Dessa forma, na medida com que as aulas avançavam, as tarefas desenvolvidas acompanhavam o conteúdo estudado. 
 
-Dessa forma, todas as etapas envolvidas no processo de desenvolvimento do software serão descritas na ordem com que são mencionadas no diagrama do modelo Cascata, representado a seguir.
+Dessa forma, todas as etapas envolvidas no processo de desenvolvimento do software serão descritas na ordem com que são mencionadas no diagrama do modelo Cascata, representado a seguir:
 
 <img width="949" alt="Modelo Cascata" src="https://github.com/ICEI-PUC-Minas-PMV-ADS/Biblioteca-Dona-Benicia/blob/main/docs/img/cascata.png">
 
