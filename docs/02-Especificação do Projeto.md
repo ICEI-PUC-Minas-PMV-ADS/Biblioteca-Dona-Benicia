@@ -1,10 +1,13 @@
-# Especificações do Projeto
 
-<span style="color:red">Pré-requisitos: <a href="1-Documentação de Contexto.md"> Documentação de Contexto</a></span>
+## Especificação de requisitos
+REQUISITOS FUNCIONAIS:
 
-Definição do problema e ideia de solução a partir da perspectiva do usuário. É composta pela definição do  diagrama de personas, histórias de usuários, requisitos funcionais e não funcionais além das restrições do projeto.
+REQUISITOS NÃO FUNCIONAIS:
 
-Apresente uma visão geral do que será abordado nesta parte do documento, enumerando as técnicas e/ou ferramentas utilizadas para realizar a especificações do projeto
+
+## Projeto - Projeto preliminar de arquitetura
+
+## Projeto - Design preliminar - Figma
 
 ## Personas
 
@@ -53,10 +56,19 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 ### Requisitos Funcionais
 
-|ID    | Descrição do Requisito  | Prioridade |
+Os requisitos funcionais descrevem explicitamente as funcionalidades e serviços do sistema, ou seja, referem-se sobre o que o sistema deve fazer, suas funções e informações.
+Na tabela a seguir é possível fazer um compilado com os principais requisitos do sistema.
+
+
+|ID    | Ator | Descrição do Requisito  | Prioridade |
 |------|-----------------------------------------|----|
-|RF-001| Permitir que o usuário cadastre tarefas | ALTA | 
-|RF-002| Emitir um relatório de tarefas no mês   | MÉDIA |
+|RF-001| Funcionário | Gerenciamento do usuários - Cadastro, Busca, Atualização e Remoção. | ALTA | 
+|RF-001.1| Funcionário | Cadastro de usuários: Informações pessoais, CPF, Nome, Endereço e telefone. Tipo de usuário: Funcionário, Professor, ou aluno. Informações institucionais: cargo/série, número de matrícula/registro | ALTA |
+|RF-002| Funcionário |Gerenciamento de Obras: Cadastro, Busca, , Atualização e Remoção | ALTA |.
+|RF-002.1| Funcionário | Cadastro de Obras: Informações da Obra: Identificador, Identificador de localização, título, autores, editora, edição, tradução, língua original, código de assunto, Disponível digitalmente,  forma de aquisição e observações| ALTA |
+|RF-003| Funcionário |Gerenciamento de Perda de Obras: Alterar Status da Obra ( por 30 dias) até que ela seja encontrada ou substituida | ALTA |.
+|RF-004| Funcionário | Gerar Relatórios: Relatório Obras emprestadas por tipo de usuário, Relatórios Obras emprestadas com maior freqência, Relatório Obras perdidas, Relatório obras em atraso para devolução| BAIXA |.
+
 
 
 ### Requisitos não Funcionais
