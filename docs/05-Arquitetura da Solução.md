@@ -3,6 +3,9 @@
 <span style="color:red">Pré-requisitos: <a href="3-Projeto de Interface.md"> Projeto de Interface</a></span>
 
 Definição de como o software é estruturado em termos dos componentes que fazem parte da solução e do ambiente de hospedagem da aplicação.
+## Diagrama de Classes
+![ModeloDeDado](https://user-images.githubusercontent.com/61097764/226206765-ec18d987-dcbf-4ba9-be1a-8c3efbea24e0.png)
+
 
 ## Diagrama de componentes
 
