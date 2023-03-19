@@ -37,10 +37,6 @@ Discuta como a configuração do projeto foi feita na ferramenta de versionament
 
 ## Gerenciamento de Projeto
 
-### Project Model Canvas
-<img width="804" alt="projectModelCanva" src="https://user-images.githubusercontent.com/61097764/226148355-6998828f-6b03-4cb9-bc8a-9e21276b231d.png">
-
-
 ### Divisão de Papéis
 
 A equipe utiliza metodologias ágeis, tendo escolhido o Scrum como base para definição do processo de desenvolvimento.  
