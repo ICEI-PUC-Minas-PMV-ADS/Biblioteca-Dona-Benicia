@@ -41,7 +41,7 @@ O Diagrama de Sequência é ideal para detalhar determinados tipos de casos de u
 
 Nesse diagrama foram utilizados vários componentes do diagrama, como por exemplo, a caixa ALT que consiste em duas alternativas, ou seja, ou o sistema informa para o usuário que já existe uma reserva para a obra que o mesmo deseja renovar o empréstimo ou, caso não haja reserva, a renovação é feita com sucesso. Para a primeira opção, o usuário deve devolver a obra mas o sistema lhe sugere fazer uma solicitação de reserva para que, no futuro, pegue a obra novamente.
   
-![Exemplo de Diagrama de Sequência](https://github.com/ICEI-PUC-Minas-PMV-ADS/Biblioteca-Dona-Benicia/blob/main/docs/img/diagramauso2.png)
+![Exemplo de Diagrama de Interação](https://github.com/ICEI-PUC-Minas-PMV-ADS/Biblioteca-Dona-Benicia/blob/main/docs/img/diagramauso2.png)
   
 Uma outra forma de representar a interação entre os objetos é por meio do Diagrama de Comunicação que, ao contrário do Diagrama de Sequência mostrado
 acima, não enfatiza a ordem temporal. A utilização desse diagrama se deu para modelar o caso de uso Informar Perda de Obra que envolve os atores: Usuário e
@@ -53,4 +53,4 @@ funcionário e os objetos Obra e Banco de Dados conforme pode-se observar abaixo
 Por fim, o Diagrama de Atividades representado abaixo ilustra umafuncionalidade muito importante para os Professores que pe Solicitar reserva de obra para disciplina. Essa funcionalidade envolve uma série de atividades e mais de um estado final, isso porque a obra que o professor precisa pode não existir, nesse
 caso ele pode sugerir a compra ou assinatura. Além disso, caso exista, ela pode não estar disponível, o que gera ainda mais fluxos possíveis que atingem diferentes estados finais
 
-![Diagrama de atividades](https://github.com/ICEI-PUC-Minas-PMV-ADS/Biblioteca-Dona-Benicia/blob/main/docs/img/diagrama5.png) 
+![Diagrama de comunicação](https://github.com/ICEI-PUC-Minas-PMV-ADS/Biblioteca-Dona-Benicia/blob/main/docs/img/diagrama5.png) 
