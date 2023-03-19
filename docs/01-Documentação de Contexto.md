@@ -16,7 +16,7 @@ Na seção seguinte, está definido o cronograma com as atividades para desenvol
 
 Nas seções subsequentes, são apresentados os seguintes documentos: 
 
-Um documento de especificação de requisitos, incluindo: Diagramas de Casos de Uso e descrição dos cenários de casos de uso. 
+Um documento de especificação de requisitos, incluindo: Diagramas de Casos de Uso e Descrição dos Cenários de Casos de Uso. 
 
 Um documento de projeto arquitetural, incluindo um Diagrama de Componentes. 
 
