@@ -8,7 +8,7 @@ O modelo de processo adotado no projeto é o modelo Cascata. A escolha desse mod
 
 Dessa forma, todas as etapas envolvidas no processo de desenvolvimento do software serão descritas na ordem com que são mencionadas no diagrama do modelo Cascata, representado a seguir.
 
-<img width="949" alt="Modelo Cascata" src="https://user-images.githubusercontent.com/61097764/226148762-65b193dc-689e-4a0a-952c-f51fe3f8e8bd.png">
+<img width="949" alt="Modelo Cascata" src="https://github.com/ICEI-PUC-Minas-PMV-ADS/Biblioteca-Dona-Benicia/blob/main/docs/img/cascata.png">
 
 Seguindo o modelo definido acima, a estruturação do documento se dá em seções nas quais em cada uma será apresentado os resultados do desenvolvimento de cada uma das atividades que compõem o modelo Cascata.
 
