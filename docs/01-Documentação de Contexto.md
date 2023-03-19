@@ -246,13 +246,5 @@ Um aviso na tela é exibido, notificando o usuário quanto ao prazo para substit
 da obra.
 
 
-## Especificação de requisitos
-REQUISITOS FUNCIONAIS:
 
-REQUISITOS NÃO FUNCIONAIS:
-
-
-## Projeto - Projeto preliminar de arquitetura
-
-## Projeto - Design preliminar - Figma
 
