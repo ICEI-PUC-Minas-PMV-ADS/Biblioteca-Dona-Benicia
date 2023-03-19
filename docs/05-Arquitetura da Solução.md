@@ -2,23 +2,20 @@
 
 O primeiro passo para solucionar os problemas definidos na etapa anterior delevantamento de Requisitos é a Arquitetura de Software. Dessa forma, o projeto arquitetural irá ligar os problemas à sua solução por meio da identificação dos componentes que farão parte do sistema bem como a definição das interfaces de comunicação entre eles. O Diagrama de Componentes abaixo representa, de forma alto nível, o projeto arquitetural do sistema de gerenciamento de bibliotecas.
 
--- projeto 1
-![Exemplo de UserFlow](https://github.com/ICEI-PUC-Minas-PMV-ADS/Biblioteca-Dona-Benicia/blob/main/docs/img/flowuser.jpeg)
+![Diagrama de Componentes](https://github.com/ICEI-PUC-Minas-PMV-ADS/Biblioteca-Dona-Benicia/blob/main/docs/img/diagramaDeComponentes.png)
 
 Foi decidido utilizar o padrão de projeto MVC para o desenvolvimento dosistema, pois desta maneira poderemos organizar o código em três camadas bem definidas e isoladas, tornando-o muito mais facilmente reutilizável e escalável. Além disso, a separação do código em módulos isolados torna a manutenção do sistema muito mais simples, pois em aplicações que seguem este padrão o desenvolvimento e os testes podem ser realizados paralelamente e de maneira isolada entre as camadas. Mesmo que o desenvolvimento do sistema se torne um pouco mais complicado, devido à necessidade de se organizar o código corretamente entre os módulos de Modelo, Visão e Controle, acreditamos que utilizar o padrão MVC vai facilitar significativamente a cooperação entre os membros da equipe durante a fase de implementação. Uma representação desse modelo pode ser vista a seguir.
 
--- Projeto 2
-![Exemplo de UserFlow](https://github.com/ICEI-PUC-Minas-PMV-ADS/Biblioteca-Dona-Benicia/blob/main/docs/img/flowuser.jpeg)
+![MVC](https://github.com/ICEI-PUC-Minas-PMV-ADS/Biblioteca-Dona-Benicia/blob/main/docs/img/mvc.png)
 
 Já a Arquitetura de Repositório (Blackboard) mostrou ser um Padrão Arquitetural estático adequado uma vez que existirá um banco de dados único contemplando várias informações referentes às obras escritas por funcionários da biblioteca mas, acessados por todos os usuários da mesma. Ou seja, consistem em uma aplicação na qual os dados são gerados por um subsistema e usados por outros. Além disso, devido o número de consultas ao repositório, busca por obras, ser maior do que o número de escritas no mesmo referente aos cadastros de obras, esse padrão de compartilhamento de dados tende a ser muito eficiente.  Similarmente ao compartilhamento do banco de dados de obras, existe também o banco de dados que armazena as informações dos usuários cadastrados. Esse
 banco é acessado pelo subsistemas: Cadastro de Usuários e Empréstimo de Obras uma vez que é necessário buscar pelo usuário sempre que o mesmo solicitar alguma obra da biblioteca emprestada. Dessa forma, tem-se uma adaptação do padrão arquitetural para englobar dois repositórios compartilhados entre os subsistemas do sistema de gestão de biblioteca.
 
--- projeto 3
-![Exemplo de UserFlow](https://github.com/ICEI-PUC-Minas-PMV-ADS/Biblioteca-Dona-Benicia/blob/main/docs/img/flowuser.jpeg)
+![Repositório](https://github.com/ICEI-PUC-Minas-PMV-ADS/Biblioteca-Dona-Benicia/blob/main/docs/img/mvc2.png)
 
 Por fim, o padrão arquitetural Dutos e Filtros será utilizado para modelar a arquitetura do subsistema responsável pela Geração de Relatórios, funcionalidade disponível apenas para os funcionários da biblioteca. O padrão arquitetural Dutos e Filtros é ideal para esse subsistema uma vez que trata-se de uma aplicação de processamento de dados, “filtragem” dos dados que irão compor os relatórios. De forma simplificada, os dados de entrada se movem pelos dutos, enquanto os filtros são responsáveis por transformar os dados até que os mesmos sejam convertidos em dados de saída. Dessa forma, o diagrama abaixo ilustra o funcionamento do subsistema cujas entradas são as obras do acervo e os usuários e a saída é um Relatório de informando a média de obras emprestadas para cada tipo de usuário da biblioteca.
 
--- projeto 4
+![Dutos](https://github.com/ICEI-PUC-Minas-PMV-ADS/Biblioteca-Dona-Benicia/blob/main/docs/img/mvc2.png)
 
 Após definir o Modelo de Arquitetura do sistema, a próxima fase do projeto de software envolve o Modelo de Projeto que consiste em um projeto mais detalhado voltado à modelagem orientada a objetos. O desenvolvimento orientado a objetos idealiza um processo que considera objetos em todas as fases, iniciando pela Análise orientada a objeto que consiste em pensar nos objetos do sistema no momento do levantamento de requisitos junto ao cliente, conforme descrito na seção anterior. Após a análise ocorre o Projeto orientado a objeto que trata da transcrição do problema identificado na fase anterior em uma solução referente ao domínio do problema. Por fim, ocorre a transição do projeto para a Programação orientada a objeto que consiste em codificar a solução em uma linguagem de
 programação orientada a objeto conforme será mostrado na seção seguinte.
