@@ -1,4 +1,4 @@
-# Biblioteca Dona Benicia
+# Biblioteca Dona Benícia
 
 `ANÁLISE E DESENVOLVIMENTO DE SISTEMAS`
 
