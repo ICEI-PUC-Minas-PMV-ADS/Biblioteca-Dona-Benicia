@@ -1,15 +1,8 @@
 
 ## Especificação de requisitos
-REQUISITOS FUNCIONAIS:
-
-REQUISITOS NÃO FUNCIONAIS:
 
 
-## Projeto - Projeto preliminar de arquitetura
-
-## Projeto - Design preliminar - Figma
-
-## Personas
+### Personas
 
 | Clara Lima|                                    |                |
 |--------------------|------------------------------------|----------------------------------------|
@@ -64,47 +57,44 @@ Na tabela a seguir é possível fazer um compilado com os principais requisitos 
 |------|-----------------------------------------|----|
 |RF-001| Funcionário | Gerenciamento do usuários - Cadastro, Busca, Atualização e Remoção. | ALTA | 
 |RF-001.1| Funcionário | Cadastro de usuários: Informações pessoais, CPF, Nome, Endereço e telefone. Tipo de usuário: Funcionário, Professor, ou aluno. Informações institucionais: cargo/série, número de matrícula/registro | ALTA |
-|RF-002| Funcionário |Gerenciamento de Obras: Cadastro, Busca, , Atualização e Remoção | ALTA |.
+|RF-002| Funcionário |Gerenciamento de Obras: Cadastro, Busca, , Atualização e Remoção | ALTA |
 |RF-002.1| Funcionário | Cadastro de Obras: Informações da Obra: Identificador, Identificador de localização, título, autores, editora, edição, tradução, língua original, código de assunto, Disponível digitalmente,  forma de aquisição e observações| ALTA |
 |RF-003| Funcionário |Gerenciamento de Perda de Obras: Alterar Status da Obra ( por 30 dias) até que ela seja encontrada ou substituida | ALTA |.
-|RF-004| Funcionário | Gerar Relatórios: Relatório Obras emprestadas por tipo de usuário, Relatórios Obras emprestadas com maior freqência, Relatório Obras perdidas, Relatório obras em atraso para devolução| BAIXA |.
+|RF-004| Funcionário | Gerar Relatórios: Relatório Obras emprestadas por tipo de usuário, Relatórios Obras emprestadas com maior freqência, Relatório Obras perdidas, Relatório obras em atraso para devolução| BAIXA |
+|RF-005| Professor | Consulta: Busca por código único da obra, código do conjunto das aobras, código de localização do conjunto das obras, título ou nome das obras. Exobir: Informações das obras, disponibilidade de exemplares, e localização física da obra | ALTA |
+|RF-006| Professor | Empréstimo de Obras: Empréstimo de obras, assinatura de periódicos, Reserva de Obras, Acompanhamento de Fila de Espera de obra, Renovação de empréstimos, Solicitação de pagamento de multa, Informações de perda de obra | ALTA |
+|RF-007| Professor | Sugestões de Obras: Envio de Sugestão de Aquisição de Obras | BAIXA |
+|RF-008| Professor | Reserva especial de Obra: Reserva de Obra Específica para consulta dos alunos de uma disciplina | ALTA |
+|RF-009| Usuário | Consulta: Busca por código único da obra, código do conjunto das aobras, código de localização do conjunto das obras, título ou nome das obras. Exobir: Informações das obras, disponibilidade de exemplares, e localização física da obra | ALTA |
+|RF-010| Usuário | Empréstimo de Obras: Empréstimo de obras, assinatura de periódicos, Reserva de Obras, Acompanhamento de Fila de Espera de obra, Renovação de empréstimos, Solicitação de pagamento de multa, Informações de perda de obra | ALTA |
+RF-011| Usuário | Sugestões de Obras: Envio de Sugestão de Aquisição de Obras | ALTA
 
 
 
 ### Requisitos não Funcionais
 
-|ID     | Descrição do Requisito  |Prioridade |
-|-------|-------------------------|----|
-|RNF-001| O sistema deve ser responsivo para rodar em um dispositivos móvel | MÉDIA | 
-|RNF-002| Deve processar requisições do usuário em no máximo 3s |  BAIXA | 
+Os requisitos não funcionais definem propriedades e restrições do sistema ou de parte dele. No entanto, ao contrário dos requisitos funcionais, os requisitos não funcionais não tratam de funcionalidades do sistema mas são extremamente necessários para que o software atenda seu propósito. A seguir foram listados os Requisitos Não Funcionais levantados para o desenvolvimento do sistema:
 
-Com base nas Histórias de Usuário, enumere os requisitos da sua solução. Classifique esses requisitos em dois grupos:
+RNF01: Acesso ao sistema:
+O acesso ocorre mediante a autenticação do usuário por meio da conferência do seu login e senha, sendo que as permissões de acesso aos dados diferencia de acordo com o usuário.
 
-- [Requisitos Funcionais
- (RF)](https://pt.wikipedia.org/wiki/Requisito_funcional):
- correspondem a uma funcionalidade que deve estar presente na
-  plataforma (ex: cadastro de usuário).
-- [Requisitos Não Funcionais
-  (RNF)](https://pt.wikipedia.org/wiki/Requisito_n%C3%A3o_funcional):
-  correspondem a uma característica técnica, seja de usabilidade,
-  desempenho, confiabilidade, segurança ou outro (ex: suporte a
-  dispositivos iOS e Android).
-Lembre-se que cada requisito deve corresponder à uma e somente uma
-característica alvo da sua solução. Além disso, certifique-se de que
-todos os aspectos capturados nas Histórias de Usuário foram cobertos.
+RNF02: Segurança dos dados:
+Algumas ações só poderão ser realizadas pelo Bibliotecário, tais como: Gerenciamento de Obras, Gerenciamento de Usuários, Gerenciamento de Perdas de Obras e Geração de Relatórios. Outras estão disponíveis também aos demais funcionários professores e alunos, como: Consultar obras e Solicitar empréstimos.
 
-## Restrições
+RNF03: Confiabilidade:
+O sistema não deve realizar empréstimos e renovações caso o exemplar desejado não esteja disponível ou possua fila de espera ou o usuário possua débitos com a biblioteca.
 
-O projeto está restrito pelos itens apresentados na tabela a seguir.
+RNF04: Eficiência:
+O sistema deve apresentar tempo de resposta satisfatório para todas as funções requisitadas. Deve responder às Consultas por obras em menos de 5 segundos e iniciar a impressão de relatórios solicitados dentro de no máximo 20 segundos após a requisição.
 
-|ID| Restrição                                             |
-|--|-------------------------------------------------------|
-|01| O projeto deverá ser entregue até o final do semestre |
-|02| Não pode ser desenvolvido um módulo de backend        |
+RNF05: Usabilidade: 
+O sistema deve fornecer uma interface amigável e intuitiva para todo o grupo de usuário que inclui jovens e idosos mas que deve atender todos da mesma forma.
 
+RNF05: Acessibilidade: 
+O sistema deve fornecer uma interface acessível à pessoas com deficiência, seguindo diretrizes do W3C.
 
-Enumere as restrições à sua solução. Lembre-se de que as restrições geralmente limitam a solução candidata.
+### Verificação e Validação de Requisitos
 
-> **Links Úteis**:
-> - [O que são Requisitos Funcionais e Requisitos Não Funcionais?](https://codificar.com.br/requisitos-funcionais-nao-funcionais/)
-> - [O que são requisitos funcionais e requisitos não funcionais?](https://analisederequisitos.com.br/requisitos-funcionais-e-requisitos-nao-funcionais-o-que-sao/)
+Após o levantamento dos requisitos na fase de elicitação, foram feitas iversas análises sobre os mesmos de maneira a verificar se estavam consistentes.
+Para a certificação da validade dos requisitos, verificou-se que todos eles eram rovenientes de casos de uso plausíveis e das entrevistas, evitando a mplementação de funcionalidades que não seriam utilizadas. Em seguida, onfirmou-se o fato de que todos os requisitos que surgiram na fase de elicitação aviam sido devidamente documentados, sem redundâncias ou incoerências. E por im, para cada requisito, avaliou-se sua viabilidade de implementação e de teste, vitando assim, a surpresa de se deparar com algum requisito excessivamente omplicado de ser desenvolvido ou de ser testado nas fases posteriores do projeto
+
