@@ -4,7 +4,7 @@
 
 ## User Flow
 
-![Exemplo de UserFlow](https://github.com/ICEI-PUC-Minas-PMV-ADS/Biblioteca-Dona-Benicia/blob/main/docs/img/userflow.jpg)
+![Exemplo de UserFlow](https://github.com/ICEI-PUC-Minas-PMV-ADS/Biblioteca-Dona-Benicia/blob/main/docs/img/flowuser.jpeg)
 
 
 ## Wireframes
