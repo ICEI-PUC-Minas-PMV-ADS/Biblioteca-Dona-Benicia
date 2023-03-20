@@ -62,6 +62,7 @@ A seguir é apresentada a documentação dos Casos de Uso por meio da técnica d
 Nome do Cenário (1): Gerenciar obras.</br>
 Ator: Funcionário.</br>
 Pré-condição: Estar logado no sistema (login e senha validados).</br>
+
 Fluxo normal:</br>
 1. Escolher uma das opções entre: Cadastro, Alteração e Exclusão.</br>
 2. Escolher o tipo de obra: obras que incluem livros, teses e dissertações ou
@@ -70,6 +71,7 @@ periódicos.</br>
 editora, edição, forma de aquisição e observações sobre a mesma.</br>
 4. Confirmar os dados.</br>
 5. A obra é armazenada no banco de dados da biblioteca.</br>
+6. 
 Fluxo alternativo: As informações não foram preenchidas em sua integridade.</br>
 3.1 Apresentar um aviso ao funcionário  informando que alguma informação está faltando.
 Pós-condição:
@@ -85,13 +87,16 @@ Fluxo normal:
 3. Entrar com as informações pessoais do usuário: nome, cpf, endereço, telefone e informações institucionais.
 4. Confirmar os dados.
 5. O usuário é armazenado no banco de dados da biblioteca.
+6. 
 Fluxo alternativo: As informações não foram preenchidas em sua integridade.
 3.1 Apresentar um aviso ao funcionário informando que alguma informação está
 faltando.
+
 Fluxo alternativo: As informações preenchidas correspondem a um usuário já
 cadastrado.
 3.1 Apresentar um aviso ao funcionário informando que o usuário já está
 cadastrado no sistema.
+
 Pós-condição:
 O cadastro é realizado com sucesso e o usuário pode fazer uso dos serviços da
 biblioteca.
