@@ -31,7 +31,9 @@ Esse repositório, além de permitir o compartilhamento do código do sistema de
 
 Tal cronograma é apresentado de maneira simplificada na tabela abaixo que conta não só com uma breve descrição da tarefa como também com o prazo da mesma e os responsáveis.
 
---- imagem cronograma
+<img width="949" alt="Modelo Cascata" src="https://github.com/ICEI-PUC-Minas-PMV-ADS/Biblioteca-Dona-Benicia/blob/main/docs/img/cronograma1.jpeg">
+<img width="949" alt="Modelo Cascata" src="https://github.com/ICEI-PUC-Minas-PMV-ADS/Biblioteca-Dona-Benicia/blob/main/docs/img/cronograma2.jpeg">
+
 
 
 ## Requisitos
