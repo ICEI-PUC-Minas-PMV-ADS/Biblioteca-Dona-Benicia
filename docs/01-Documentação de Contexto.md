@@ -48,9 +48,9 @@ análises descritas acima foi possível concluir que o desenvolvimento deste pro
 
 Na fase de Elicitação de Requisitos, três técnicas foram utilizadas:
 
-  ● Entrevista,
-  ● Diagrama de Casos de Uso;
-  ● Cenários.
+  ● Entrevista, </br>
+  ● Diagrama de Casos de Uso; </br>
+  ● Cenários.</br>
   
 Para a aplicação da entrevista, em particular, definiu-se três tipos de usuários principais do sistema, nos quais se enquadram a figura dos alunos, professores e o diretor da escola.
 
