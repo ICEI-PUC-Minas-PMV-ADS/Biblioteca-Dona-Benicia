@@ -71,7 +71,7 @@ periódicos.</br>
 editora, edição, forma de aquisição e observações sobre a mesma.</br>
 4. Confirmar os dados.</br>
 5. A obra é armazenada no banco de dados da biblioteca.</br>
-6. 
+ 
 Fluxo alternativo: As informações não foram preenchidas em sua integridade.</br>
 3.1 Apresentar um aviso ao funcionário  informando que alguma informação está faltando.
 Pós-condição:
@@ -87,7 +87,7 @@ Fluxo normal:
 3. Entrar com as informações pessoais do usuário: nome, cpf, endereço, telefone e informações institucionais.
 4. Confirmar os dados.
 5. O usuário é armazenado no banco de dados da biblioteca.
-6. 
+ 
 Fluxo alternativo: As informações não foram preenchidas em sua integridade.
 3.1 Apresentar um aviso ao funcionário informando que alguma informação está
 faltando.
@@ -108,9 +108,11 @@ Fluxo normal:
 1. Entrar com o login do usuário.
 2. Dentre as obras sob posse do usuário, selecionar a obra perdida .
 3. Alterar o status da obra.
+
 Fluxo alternativo: A obra foi perdida.
 3.1 Marcar a obra como perdida.
 3.2 Notificar o usuário quanto ao prazo para substituição da obra.
+
 Fluxo alternativo: A obra perdida foi encontrada ou substituída.
 3.1 Marcar a obra perdida como disponível.
 Pós-condição:
@@ -135,8 +137,10 @@ Fluxo normal:
 1. Caso de Uso “Consultar obra”.
 2. Selecionar a obra que se deseja utilizar na disciplina.
 3. Associar um exemplar da obra à disciplina ministrada, fornecendo o seu código.
+
 Fluxo alternativo: A obra não existe na biblioteca.
 1.1 Caso de Uso “Sugerir compra/assinatura de obra”.
+
 Fluxo alternativo: A obra não está emprestada.
 2.1 Caso de Uso “Solicitar reserva”.
 Pós-condição:
@@ -151,6 +155,7 @@ de localização do conjunto destas obras, nome ou autor(es).
 2. Confirmar busca.
 3. Buscar pela obra nas bases de dados.
 4. Retornar obras que correspondem ao que foi pesquisado.
+
 Fluxo alternativo: Nenhuma obra corresponde ao que foi pesquisado.
 4.1 Apresentar um aviso ao usuário.
 Pós-condição:
@@ -176,16 +181,20 @@ Fluxo normal:
 3. Confirmar empréstimo da obra.
 4. Inserir a senha do bibliotecário responsável por entregar a obra.
 5. Inserir o código e senha do usuário que está fazendo o empréstimo da obra.
+
 Fluxo alternativo: A obra desejada não está disponível.
 3.1 Apresentar um aviso ao usuário.
 3.2 Caso de Uso “Solicitar reserva”.
+
 Fluxo alternativo: O usuário possui débitos que devem ser quitados.
 3.1 Apresentar um aviso ao usuário.
 3.2 Caso de Uso “Solicitar pagamento de multa”.
+
 Fluxo alternativo: O usuário já atingiu o limite de empréstimos. (Aluno Graduação:
 5 obras e demais usuários: 7 obras)
 3.1 Apresentar um aviso ao usuário informando que o empréstimo não pode ser
 realizado.
+
 Pós-condição:
 O livro é emprestado com sucesso.
 
@@ -206,9 +215,11 @@ Fluxo normal:
 1. Acessar “Meus Empréstimos”.
 2. Selecionar a obra que se deseja renovar o empréstimo.
 3. Solicitar renovação de empréstimo.
+
 Fluxo alternativo: A obra desejada não está disponível.
 3.1 Apresentar um aviso ao usuário.
 3.2 Caso de Uso “Solicitar reserva”.
+
 Fluxo alternativo: O usuário possui débitos que devem ser quitados.
 3.1 Apresentar um aviso ao usuário.
 3.2 Caso de Uso “Solicitar pagamento de multa”.
