@@ -78,7 +78,7 @@ Pós-condição:
 O cadastro é realizado com sucesso e a obra fica disponível para ser emprestada.
 
 
-</br>
+
 Nome do Cenário (2): Gerenciar usuários.
 Ator: Funcionário e Usuário.
 Pré-condição: Estar logado no sistema (login e senha validados).
@@ -102,7 +102,7 @@ Pós-condição:
 O cadastro é realizado com sucesso e o usuário pode fazer uso dos serviços da
 biblioteca.
 
-</br>
+
 Nome do Cenário (3): Gerenciar perdas de obras.
 Ator: Funcionário.
 Pré-condição: Estar logado no sistema (login e senha validados).
@@ -120,7 +120,7 @@ Fluxo alternativo: A obra perdida foi encontrada ou substituída.
 Pós-condição:
 Status da obra atualizado.
 
-</br>
+
 Nome do Cenário (4): Gerar relatórios.
 Ator: Funcionário.
 Pré-condição: Estar logado no sistema (login e senha validados).
@@ -133,7 +133,7 @@ obras em atraso para devolução.
 Pós-condição:
 Relatório é gerado e apresentado na tela para o bibliotecário.
 
-</br>
+
 Nome do Cenário (5): Solicitar reserva de obra para disciplina .
 Ator: Professor.
 Pré-condição: Estar logado no sistema (login e senha validados).
@@ -150,7 +150,7 @@ Fluxo alternativo: A obra não está emprestada.
 Pós-condição:
 Um exemplar do título fica disponível especialmente para aos alunos da disciplina.
 
-</br>
+
 Nome do Cenário (6): Consultar obra.
 Ator: Usuário.
 Pré-condição: Nenhuma.
@@ -166,7 +166,7 @@ Fluxo alternativo: Nenhuma obra corresponde ao que foi pesquisado.
 Pós-condição:
 As obras encontradas são retornadas e apresentadas ao usuário.
 
-</br>
+
 Nome do Cenário (7): Solicitar reserva.
 Ator: Usuário.
 Pré-condição: Estar logado no sistema (login e senha validados) e ter pesquisado
@@ -178,7 +178,7 @@ Fluxo normal:
 Pós-condição:
 O usuário recebe um aviso informando que o mesmo entrou na fila de espera da obra e quando a mesma estiver disponível ele será notificado por e-mail. Após o recebimento do e-mail, o usuário terá um dia útil para realizar o empréstimo da obra antes que a mesma se torne disponível para o próximo da fila.
 
-</br>
+
 Nome do Cenário (8): Solicitar empréstimo.
 Ator: Usuário e Funcionário.
 Pré-condição: Funcionário estar logado no sistema (login e senha validados).
@@ -205,7 +205,7 @@ realizado.
 Pós-condição:
 O livro é emprestado com sucesso.
 
-</br>
+
 Nome do Cenário (9): Acompanhar fila de espera.
 Ator: Usuário.
 Pré-condição: Estar logado no sistema e estar na Fila de Espera de alguma obra.
@@ -216,7 +216,7 @@ Engenharia de software Página 12 de 32
 Pós-condição:
 A posição na fila de espera é exibida na tela.
 
-</br>
+
 Nome do Cenário (10): Renovar empréstimo.
 Ator: Usuário.
 Pré-condição: Estar logado no sistema e ter um empréstimo em seu nome.
@@ -235,7 +235,7 @@ Fluxo alternativo: O usuário possui débitos que devem ser quitados.
 Pós-condição:
 O empréstimo é renovado com sucesso.
 
-</br>
+
 Nome do Cenário (11): Sugerir compra/assinatura de obra.
 Ator: Usuário.
 Pré-condição: Estar logado no sistema (login e senha validados).
@@ -248,7 +248,7 @@ dissertações),nome, autor(es), editora, edição e observações sobre a mesma
 Pós-condição:
 A sugestão é enviada com sucesso para o e-mail geral da biblioteca.
 
-</br>
+
 Nome do Cenário (12): Solicitar pagamento de multa
 Ator: Usuário e Bibliotecário.
 Pré-condição: Usuário estar logado no sistema e possuir débitos pendentes.
@@ -261,7 +261,7 @@ Engenharia de software Página 13 de 32
 Pós-condição:
 O funcionário registra o pagamento e os débitos do usuário são quitados.
 
-</br>
+
 Nome do Cenário (13): Informar perda de obra
 Ator: Usuário.
 Pré-condição: Usuário estar logado no sistema (login e senha validados).
