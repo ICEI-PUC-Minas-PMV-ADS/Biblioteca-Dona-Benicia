@@ -1,6 +1,36 @@
 
 ## Especificação de requisitos
 
+### ATA
+Data: 06 de março de 2023
+Horário: 9h00 às 10h00
+Local: Sala da diretoria da escola
+
+Presentes:
+
+Diretor da escola, Sergio Rafael
+Membros do grupo
+Pauta:
+
+Definição do escopo inicial para o aplicativo da biblioteca
+O diretor Sergio Rafael iniciou a reunião dando as boas-vindas a todos e agradecendo a presença dos membros do grupo. Em seguida, foi apresentada a pauta da reunião.
+
+O diretor Sergio Rafael explicou que a escola deseja desenvolver um aplicativo para a biblioteca, com o objetivo de facilitar o acesso dos alunos aos livros e materiais disponíveis. Foi destacado que o aplicativo deve ser de fácil uso e que seja possível realizar buscas por título, autor e palavras-chave.
+
+Após discussão, foi definido que o escopo inicial do aplicativo da biblioteca será composto pelas seguintes funcionalidades:
+
+Cadastro de usuários (alunos e professores) com login e senha
+Busca de livros por título, autor e palavras-chave
+Visualização de informações dos livros (disponibilidade, resumo, capa, etc.)
+Reserva de livros
+Renovação de empréstimos
+Devolução de livros
+Foi acordado que o aplicativo deve ser compatível ao uso em plataformas móveis (smartphones) para uso dos alunos (empréstimos, reservas e pagamnto de multa) em compatível com desktop para uso do funcionário/bibliotecário para inserção e cadastro das obras, gestão de relatórios, busca avançada de referência. Deverá o aplicativo ser compatível com iOS e Android, e que a equipe responsável pelo desenvolvimento deverá apresentar um protótipo funcional em um prazo de 3 meses.
+
+O diretor Sergio Rafael agradeceu a participação dos membros do grupo e destacou a importância dessa iniciativa para a escola. A próxima reunião será marcada em breve para acompanhar o andamento do projeto.
+
+Encerramento:
+Nada mais havendo a tratar, a reunião foi encerrada às 10h00. A ata foi lavrada pelo secretário presente e será assinada posteriormente pelo diretor e pelos membros do grupo.
 
 ### Personas
 
