@@ -59,18 +59,18 @@ A entrevista semi-estruturada foi realizada com o diretorda escola, dois alunos 
 ## Cenários
 A seguir é apresentada a documentação dos Casos de Uso por meio da técnica de Cenários. Dessa forma, são apresentados os cenários referentes a cada um dos casos de uso representados no diagrama de Casos de Uso apresentado anteriormente.
 
-Nome do Cenário (1): Gerenciar obras.
-Ator: Funcionário.
-Pré-condição: Estar logado no sistema (login e senha validados).
-Fluxo normal:
-1. Escolher uma das opções entre: Cadastro, Alteração e Exclusão.
+Nome do Cenário (1): Gerenciar obras.</br>
+Ator: Funcionário.</br>
+Pré-condição: Estar logado no sistema (login e senha validados).</br>
+Fluxo normal:</br>
+1. Escolher uma das opções entre: Cadastro, Alteração e Exclusão.</br>
 2. Escolher o tipo de obra: obras que incluem livros, teses e dissertações ou
-periódicos.
+periódicos.</br>
 3. Entrar com as informações da obra: código único da obra, código do conjunto destas obras, código de localização do conjunto destas obras, nome, autor(es),
-editora, edição, forma de aquisição e observações sobre a mesma.
-4. Confirmar os dados.
-5. A obra é armazenada no banco de dados da biblioteca.
-Fluxo alternativo: As informações não foram preenchidas em sua integridade.
+editora, edição, forma de aquisição e observações sobre a mesma.</br>
+4. Confirmar os dados.</br>
+5. A obra é armazenada no banco de dados da biblioteca.</br>
+Fluxo alternativo: As informações não foram preenchidas em sua integridade.</br>
 3.1 Apresentar um aviso ao funcionário  informando que alguma informação está faltando.
 Pós-condição:
 O cadastro é realizado com sucesso e a obra fica disponível para ser emprestada.
