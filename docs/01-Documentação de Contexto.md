@@ -48,8 +48,9 @@ análises descritas acima foi possível concluir que o desenvolvimento deste pro
 
 Na fase de Elicitação de Requisitos, três técnicas foram utilizadas:
   ● Entrevista,
-  ● Diagrama de casos de uso;
+  ● Diagrama de Casos de Uso;
   ● Cenários.
+  
 Para a aplicação da entrevista, em particular, definiu-se três tipos de usuários principais do sistema, nos quais se enquadram a figura dos alunos, professores e o diretor da escola.
 
 A entrevista semi-estruturada foi realizada com o diretorda escola, dois alunos e um professor, objetivando contemplar perguntas referentes à forma com que esses usuários interagiriam com sistemas de gestão de bibliotecas. Além disso, a entrevista permitiu levantar mais requisitos além daqueles já especificados anteriormente
