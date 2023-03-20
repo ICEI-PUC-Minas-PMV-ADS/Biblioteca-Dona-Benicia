@@ -47,6 +47,7 @@ análises descritas acima foi possível concluir que o desenvolvimento deste pro
 ## Elicitação de Requisitos
 
 Na fase de Elicitação de Requisitos, três técnicas foram utilizadas:
+
   ● Entrevista,
   ● Diagrama de Casos de Uso;
   ● Cenários.
