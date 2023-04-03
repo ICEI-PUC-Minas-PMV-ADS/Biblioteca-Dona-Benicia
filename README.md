@@ -14,7 +14,7 @@ O sistema deve facilitar o gerenciamento da biblioteca, tornando os processos ma
 * Janaina Jamarino Rosa Fernandez Dopazo
 * Leandro David Metzker
 * Luiza Jamarino Rosa Grigorio
-* Platini Gomes da Rocha
+* Platiní Gomes da Rocha
 * Priscilha Sansão Alves
 
 ## Orientador
