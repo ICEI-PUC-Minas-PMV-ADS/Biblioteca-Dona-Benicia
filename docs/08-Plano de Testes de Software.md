@@ -44,3 +44,45 @@ Espera-se que o sistema apresente um formulário de cadastro de usuário claro e
 
 Após a realização do teste de usabilidade, conclui-se que o sistema apresenta um formulário de cadastro claro e bem definido, com campos de entrada legíveis e uma navegação intuitiva. As tarefas de cadastro, busca, atualização e remoção de usuários foram realizadas com facilidade e sem complicações. Recomenda-se que o sistema seja integrado com o banco de dados para uma avaliação completa.
 
+# Teste de Usabilidade - Requisito RF-002
+
+## Objetivo
+
+O objetivo deste teste de usabilidade é avaliar a facilidade de uso do sistema de gerenciamento de obras, levando em consideração os critérios de usabilidade, tais como clareza, simplicidade e eficiência.
+
+## Pré-requisitos
+
+- Acesso ao sistema;
+- Navegador web compatível.
+
+## Tarefas
+
+1. Acessar o link "Inclusão de obra" e verificar se o formulário de cadastro de obra é de fácil compreensão e preenchimento.
+2. Acessar o link "Catalogação" e verificar se a busca de obras é clara e eficiente.
+3. Acessar o link "Consulta ao Acervo" e verificar se a busca de obras é clara e eficiente.
+4. Acessar o link "Registro empréstimo / devolução" e verificar se o formulário de registro é de fácil compreensão e preenchimento.
+5. Acessar o link "Emissão de multa" e verificar se o formulário de emissão de multa é de fácil compreensão e preenchimento.
+6. Acessar o link "Cadastro de usuário" e verificar se o formulário de cadastro de usuário é de fácil compreensão e preenchimento.
+7. Acessar o link "Bloqueio e desbloqueio de usuário" e verificar se o formulário de bloqueio e desbloqueio de usuário é de fácil compreensão e preenchimento.
+
+## Critérios de avaliação
+
+- Clareza na apresentação das informações;
+- Facilidade de compreensão dos formulários;
+- Facilidade de navegação pelo sistema;
+- Facilidade de execução das tarefas.
+
+## Resultados esperados
+
+Espera-se que o sistema apresente uma interface clara e de fácil compreensão, com formulários bem definidos e links de navegação intuitivos. Além disso, o sistema deve permitir uma navegação fácil e eficiente pelos links de Inclusão de obra, Catalogação, Consulta ao Acervo, Registro empréstimo / devolução, Emissão de multa, Cadastro de usuário e Bloqueio e desbloqueio de usuário.
+
+## Observações
+
+- Este teste de usabilidade é uma avaliação preliminar do sistema, não considerando ainda a integração com o banco de dados;
+- Os dados inseridos nos formulários não serão armazenados no banco de dados.
+
+## Conclusão
+
+Após a realização do teste de usabilidade, conclui-se que o sistema apresenta uma interface clara e bem definida, com links de navegação intuitivos e formulários de fácil compreensão. As tarefas de Inclusão de obra, Catalogação, Consulta ao Acervo, Registro empréstimo / devolução, Emissão de multa, Cadastro de usuário e Bloqueio e desbloqueio de usuário foram realizadas com facilidade e sem complicações. Recomenda-se que o sistema seja integrado com o banco de dados para uma avaliação completa.
+
+
