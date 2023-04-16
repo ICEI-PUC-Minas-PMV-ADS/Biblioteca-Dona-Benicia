@@ -32,6 +32,44 @@ O diretor Sergio Rafael agradeceu a participação dos membros do grupo e destac
 Encerramento:
 Nada mais havendo a tratar, a reunião foi encerrada às 10h00. A ata foi lavrada pelo secretário presente e será assinada posteriormente pelo diretor e pelos membros do grupo.
 
+### Ata de Reunião Etapa 2
+
+Data: 24/04/2023 
+
+Hora: 14h 
+
+Local: Sala de reuniões virtual 
+
+Participantes:
+
+| Nome                               | E-mail                          | Papel         |
+| ---------------------------------- | ------------------------------ | ------------- |
+| Sergio Rafael                      |                                | Diretor da escola |
+| Daiane Aparecida Rocha Cardoso     | 1335058@sga.pucminas.br        | Desenvolvedora |
+| Janaina Jamarino Rosa Fernandez    | Janaina.jamarino@sga.pucminas.br| Desenvolvedora |
+| Luiza Jamarino Rosa Grigorio       | 1330157@sga.pucminas.br        | Desenvolvedora |
+| Leandro David Metzker              | Idmetzker@sga.pucminas.br       | Desenvolvedor |
+| Platiní Gomes da Rocha             | Pgrocha@sga.pucminas.br         | Desenvolvedor |
+| Priscilha Sansão Alves             | Priscilha.alves@sga.pucminas.br | Desenvolvedora |
+
+Pauta: 
+
+- Validação de escopo com o cliente 
+
+Notas e Decisões:
+
+- Foi apresentado o protótipo da aplicação para o cliente e o mesmo validou o escopo do projeto. 
+- O Kanban foi atualizado com as tarefas da Sprint 2. 
+- Foi discutido e definido o plano de testes para a implementação da Sprint 2. 
+- Ficou acordado que as evidências de testes serão compartilhadas no GitHub junto com o código-fonte. 
+
+Pendências:
+
+| Descrição da Pendência | Data para solução | Responsável |
+| ---------------------- | ----------------- | ----------- |
+| Não houve pendências.  |                   |             |
+
+
 ### Personas
 
 | Clara Lima|                                    |                |
