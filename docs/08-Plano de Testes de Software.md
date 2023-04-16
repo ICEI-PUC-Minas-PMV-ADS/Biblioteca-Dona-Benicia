@@ -1,19 +1,46 @@
 # Plano de Testes de Software
 
-<span style="color:red">Pré-requisitos: <a href="2-Especificação do Projeto.md"> Especificação do Projeto</a></span>, <a href="3-Projeto de Interface.md"> Projeto de Interface</a>
+# Teste de Usabilidade - Requisito RF-001
 
-Apresente os cenários de testes utilizados na realização dos testes da sua aplicação. Escolha cenários de testes que demonstrem os requisitos sendo satisfeitos.
+## Objetivo
 
-Enumere quais cenários de testes foram selecionados para teste. Neste tópico o grupo deve detalhar quais funcionalidades avaliadas, o grupo de usuários que foi escolhido para participar do teste e as ferramentas utilizadas.
- 
-## Ferramentas de Testes (Opcional)
+O objetivo deste teste de usabilidade é avaliar a facilidade de uso do formulário de cadastro de usuários do sistema, levando em consideração os critérios de usabilidade, tais como clareza, simplicidade e eficiência.
 
-Comente sobre as ferramentas de testes utilizadas.
- 
-> **Links Úteis**:
-> - [IBM - Criação e Geração de Planos de Teste](https://www.ibm.com/developerworks/br/local/rational/criacao_geracao_planos_testes_software/index.html)
-> - [Práticas e Técnicas de Testes Ágeis](http://assiste.serpro.gov.br/serproagil/Apresenta/slides.pdf)
-> -  [Teste de Software: Conceitos e tipos de testes](https://blog.onedaytesting.com.br/teste-de-software/)
-> - [Criação e Geração de Planos de Teste de Software](https://www.ibm.com/developerworks/br/local/rational/criacao_geracao_planos_testes_software/index.html)
-> - [Ferramentas de Test para Java Script](https://geekflare.com/javascript-unit-testing/)
-> - [UX Tools](https://uxdesign.cc/ux-user-research-and-user-testing-tools-2d339d379dc7)
+## Pré-requisitos
+
+- Acesso ao sistema;
+- Navegador web compatível.
+
+## Tarefas
+
+1. Acessar o formulário de cadastro de usuários no sistema;
+2. Preencher os campos de cadastro com informações fictícias;
+3. Submeter o formulário de cadastro;
+4. Verificar se uma mensagem de sucesso é exibida após a submissão do formulário;
+5. Realizar uma busca pelo usuário cadastrado anteriormente;
+6. Verificar se as informações do usuário são exibidas corretamente;
+7. Atualizar as informações do usuário cadastrado anteriormente;
+8. Verificar se as informações foram atualizadas corretamente;
+9. Remover o usuário cadastrado anteriormente;
+10. Verificar se uma mensagem de confirmação é exibida antes de remover o usuário.
+
+## Critérios de avaliação
+
+- Clareza na apresentação das informações;
+- Facilidade de compreensão do formulário de cadastro;
+- Facilidade de navegação pelo sistema;
+- Facilidade de execução das tarefas.
+
+## Resultados esperados
+
+Espera-se que o sistema apresente um formulário de cadastro de usuário claro e de fácil compreensão, com campos de entrada bem definidos e rótulos legíveis. Além disso, o sistema deve permitir uma navegação fácil e intuitiva, com a capacidade de realizar as tarefas de cadastro, busca, atualização e remoção de usuários de forma eficiente e sem complicações.
+
+## Observações
+
+- Este teste de usabilidade é uma avaliação preliminar do sistema, não considerando ainda a integração com o banco de dados;
+- Os dados inseridos no formulário de cadastro não serão armazenados no banco de dados.
+
+## Conclusão
+
+Após a realização do teste de usabilidade, conclui-se que o sistema apresenta um formulário de cadastro claro e bem definido, com campos de entrada legíveis e uma navegação intuitiva. As tarefas de cadastro, busca, atualização e remoção de usuários foram realizadas com facilidade e sem complicações. Recomenda-se que o sistema seja integrado com o banco de dados para uma avaliação completa.
+
