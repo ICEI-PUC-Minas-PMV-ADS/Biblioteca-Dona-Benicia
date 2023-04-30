@@ -1,23 +1,25 @@
-# TÍTULO DO PROJETO
+# Biblioteca Dona Benícia
 
-`CURSO`
+`ANÁLISE E DESENVOLVIMENTO DE SISTEMAS`
 
-`DISCIPLINA`
+`Desenvolvimento de um Sistema Sociotécnico Inovador `
 
-`SEMESTRE`
+`Eixo 5`
 
-Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo desenvolvido.
+Desenvolvimento de uma Aplicação móvel onde será possível realizar o empréstimo de livros. Tal sistema tem por finalidade controlar entrada e saída de acervos, controle de usuários e emissão de relatórios gerenciais.
+O sistema deve facilitar o gerenciamento da biblioteca, tornando os processos mais ágeis e eficazes, trazendo benefícios para os alunos e para a escola.
 
 ## Integrantes
-
-* Nome completo do aluno 1
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
+* Daiane Aparecida Rocha Cardoso
+* Janaina Jamarino Rosa Fernandez Dopazo
+* Leandro David Metzker
+* Luiza Jamarino Rosa Grigorio
+* Platiní Gomes da Rocha
+* Priscilha Sansão Alves
 
 ## Orientador
 
-* Nome completo do professor 1
+* Viviane Cristina Dias
 
 ## Instruções de utilização
 
@@ -37,6 +39,7 @@ Assim que a primeira versão do sistema estiver disponível, deverá complementa
 <li><a href="docs/09-Registro de Testes de Software.md"> Registro de Testes de Software</a></li>
 <li><a href="docs/10-Apresentação do Projeto.md"> Apresentação do Projeto</a></li>
 <li><a href="docs/11-Referências.md"> Referências</a></li>
+
 </ol>
 
 # Hospedagem
