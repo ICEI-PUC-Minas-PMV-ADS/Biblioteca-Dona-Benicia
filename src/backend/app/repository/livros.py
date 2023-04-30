@@ -1,6 +1,8 @@
+import os
 from pymongo import MongoClient
 
-url = "mongodb+srv://daiane:daiane@cluster0.nsm0q.mongodb.net"
+url = os.getenv("DATABASE_URL")
+
 client = MongoClient(url)
 db = client.get_database('biblioteca')
 

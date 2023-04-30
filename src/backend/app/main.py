@@ -1,14 +1,17 @@
-from fastapi import FastAPI, HTTPException
+from app.dto.livros import LivroDTO
+from app.controller import livros
 from pydantic import BaseModel
-from controller import livros
-from dto.livros import LivroDTO
+from fastapi import FastAPI, HTTPException
+from dotenv import load_dotenv
+load_dotenv()
+
 
 app = FastAPI()
 
 
 @app.get("/")
 async def root():
-    return {"message": "Hello World"}
+    return {"message": "Olá todos"}
 
 # Consultar(todos)
 
