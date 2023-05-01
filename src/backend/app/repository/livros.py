@@ -1,58 +1,48 @@
-import os
 from pymongo import MongoClient
-
-url = os.getenv("DATABASE_URL")
-
-client = MongoClient(url)
-db = client.get_database('biblioteca')
-
-# Selecione o banco de dados e a coleção
-col = db["livros"]
+from bson.objectid import ObjectId
 
 
-livros = [
-    {
-        'id': 1,
-        'título': 'O Senhor dos Anéis - A Sociedade do Anel',
-        'autor': 'J.R.R Tolkien'
-    },
-    {
-        'id': 2,
-        'título': 'Harry Potter e a Pedra Filosofal',
-        'autor': 'J.K Howling'
-    },
-    {
-        'id': 3,
-        'título': 'James Clear',
-        'autor': 'Hábitos Atômicos'
-    },
-]
+class BookRepository:
+    def __init__(self, client: MongoClient):
+        self.client = client
+        self.db = client.get_database('biblioteca')
+        self.collection = self.db["livros"]
 
+    # post
+    def incluir_novo_livro(self, novo_livro):
+        result = self.collection.insert_one(novo_livro)
+        return self.obter_livro_por_id(result.inserted_id)
 
-def incluir_novo_livro(novo_livro):
-    col.insert_one(novo_livro)
-    return novo_livro
+    # delete
+    def excluir_livro(self, id: str):
+        result = self.collection.find_one({"_id": ObjectId(id)})
+        if result:
+            self.collection.delete_one({"_id": ObjectId(id)})
+        else:
+            raise FileNotFoundError("Esse ID nao existe na base de dados")
 
+    # put
+    def editar_livro_por_id(self, id: int, livro_alterado: dict):
+        result = self.collection.find_one({"_id": ObjectId(id)})
+        if result:
+            update_result = self.collection.update_one(
+                {"_id": ObjectId(id)}, {"$set": livro_alterado})
+            print(update_result.modified_count)
+            if update_result.modified_count == 1:
+                return self.obter_livro_por_id(id)
+            else:
+                return result
+        else:
+            raise FileNotFoundError("Esse ID nao existe na base de dados")
 
+    # get
+    def obter_livro_por_id(self, id: str):
+        result = self.collection.find_one({"_id": ObjectId(id)})
+        if result:
+            return result
+        else:
+            raise FileNotFoundError("Esse ID nao existe na base de dados")
 
-def excluir_livro(id: int):
-    for indice, livro in enumerate(livros):
-        if livro.get('id') == id:
-            del livros[indice]
-
-
-def editar_livro_por_id(id: int, livro_alterado: dict):
-    for indice, livro in enumerate(livros):
-        if livro.get('id') == id:
-            livros[indice].update(livro_alterado)
-            return livros[indice]
-
-
-def obter_livro_por_id(id: int):
-    for livro in livros:
-        if livro.get('id') == id:
-            return livro
-
-
-def obter_livros():
-    return livros
+    # get
+    def obter_livros(self):
+        return list(self.collection.find(limit=20))

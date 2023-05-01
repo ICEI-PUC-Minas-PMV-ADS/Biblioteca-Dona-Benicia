@@ -26,6 +26,10 @@ services:
       - db
     ports:
       - "80:8000"
+    networks:
+      - nt
+
+
 networks:
   nt:
 
