@@ -1,3 +1,5 @@
 fastapi[all]
 pymongo
 python-dotenv
+azure-storage-blob 
+azure-identity

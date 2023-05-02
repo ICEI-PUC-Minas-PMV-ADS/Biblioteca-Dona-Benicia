@@ -2,20 +2,19 @@ from pymongo import MongoClient
 from bson.objectid import ObjectId
 
 
-class BookRepository:
+class PersonRepository:
     def __init__(self, client: MongoClient):
         self.client = client
         self.db = client.get_database('biblioteca')
-        self.collection = self.db["livros"]
+        self.collection = self.db["usuarios"]
 
     # post
-    def incluir_novo_livro(self, novo_livro):
-        result = self.collection.insert_one(novo_livro)
-        return self.obter_livro_por_id(result.inserted_id)
-    
+    def incluir_novo_usuario(self, novo_usuario):
+        result = self.collection.insert_one(novo_usuario)
+        return self.obter_usuario_por_id(result.inserted_id)
 
     # delete
-    def excluir_livro(self, id: str):
+    def excluir_usuario(self, id: str):
         result = self.collection.find_one({"_id": ObjectId(id)})
         if result:
             self.collection.delete_one({"_id": ObjectId(id)})
@@ -23,21 +22,21 @@ class BookRepository:
             raise FileNotFoundError("Esse ID nao existe na base de dados")
 
     # put
-    def editar_livro_por_id(self, id: int, livro_alterado: dict):
+    def editar_usuario_por_id(self, id: int, usuario_alterado: dict):
         result = self.collection.find_one({"_id": ObjectId(id)})
         if result:
             update_result = self.collection.update_one(
-                {"_id": ObjectId(id)}, {"$set": livro_alterado})
+                {"_id": ObjectId(id)}, {"$set": usuario_alterado})
             print(update_result.modified_count)
             if update_result.modified_count == 1:
-                return self.obter_livro_por_id(id)
+                return self.obter_usuario_por_id(id)
             else:
                 return result
         else:
             raise FileNotFoundError("Esse ID nao existe na base de dados")
 
     # get
-    def obter_livro_por_id(self, id: str):
+    def obter_usuario_por_id(self, id: str):
         result = self.collection.find_one({"_id": ObjectId(id)})
         if result:
             return result
@@ -45,6 +44,5 @@ class BookRepository:
             raise FileNotFoundError("Esse ID nao existe na base de dados")
 
     # get
-    def obter_livros(self):
+    def obter_usuario(self):
         return list(self.collection.find(limit=20))
-    

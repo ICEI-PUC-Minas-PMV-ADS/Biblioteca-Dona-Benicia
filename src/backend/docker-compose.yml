@@ -18,10 +18,9 @@ services:
     container_name: FAST-API
     build: .
     command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
-    environment:
-      - DATABASE_URL=mongodb://admin:admin@mongo-biblioteca:27017
+    env_file: ./app/.env
     volumes:
-      - ./app:/code/app
+      - ./:/code
     depends_on:
       - db
     ports:
