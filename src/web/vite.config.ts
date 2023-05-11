@@ -14,6 +14,7 @@ export default defineConfig({
       '/api': {
         target: `${FAST_API}`,
         changeOrigin: true,
+        secure: false,
         rewrite: (path) => path.replace(/^\/api/, ''),
       },
     },
