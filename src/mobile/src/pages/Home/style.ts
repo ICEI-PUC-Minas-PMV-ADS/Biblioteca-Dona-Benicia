@@ -29,12 +29,11 @@ export const styles = StyleSheet.create({
     width: 50,
     height: 50,
     borderRadius: 25,
-    marginRight: 10,
-    marginLeft: 18,
-    marginTop: 10,
+    marginLeft: 30,
+    marginTop: 50,
   },
   name: {
     fontSize: 9,
-    marginLeft: 18,
+    marginLeft: 50,
   },
 });

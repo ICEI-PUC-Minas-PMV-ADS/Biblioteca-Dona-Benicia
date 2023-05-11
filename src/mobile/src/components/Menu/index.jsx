@@ -23,7 +23,7 @@ const Menu = () => {
         <Rectangle
           title="Inclusão de obra catalogação"
           icon={<MaterialIcons name="add-circle" size={24} color="#fff" />}
-          to="login"
+          to="inclusaoObra"
         />
         <View style={styles.margin} />
         <Rectangle
@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     paddingVertical: 10,
-    paddingHorizontal: 20,
+    paddingHorizontal: 5,
     backgroundColor: '#337561',
     marginVertical: 5,
   },

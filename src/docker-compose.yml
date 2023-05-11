@@ -1,0 +1,50 @@
+services:
+  db:
+    container_name: mongo-biblioteca
+    image: mongo
+    networks:
+      - nt
+    volumes:
+      - mongo-data:/data/db
+    ports:
+      - 27017:27017
+    restart: unless-stopped
+    environment:
+      MONGO_INITDB_DATABASE: bibilioteca
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: admin
+
+  fast-api:
+    container_name: FAST-API
+    build: 
+      context: ./backend
+      dockerfile: Dockerfile
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+    env_file: ./backend/app/.env
+    volumes:
+      - ./backend/:/code
+    depends_on:
+      - db
+    ports:
+      - "8000:8000"
+    networks:
+      - nt
+  app:
+    build:
+      context: ./web
+    command: npm run dev
+    image: vite-react-express:latest
+    environment:
+      - FAST_API=http://fast-api:8000
+      #- FAST_API=https://donabenicia-dev.azurewebsites.net
+    ports:
+      - '3000:3000'
+    networks:
+        - nt
+
+
+networks:
+  nt:
+
+volumes:
+  mongo-data:

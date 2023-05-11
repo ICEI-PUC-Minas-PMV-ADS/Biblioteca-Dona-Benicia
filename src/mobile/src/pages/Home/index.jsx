@@ -1,12 +1,33 @@
-import React from 'react';
-import { Text, View, StyleSheet, Image } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { Text, View, StyleSheet, Image, TouchableOpacity, Button } from 'react-native';
 import Container from '../../components/container/index';
 import Footer from '../../components/footer/index';
 import Menu from '../../components/Menu/index';
 import { styles } from './style';
 
+import api from '../../services/api';
+
 
 const Home = () => {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    api.get('/livros')
+      .then(response => {
+        const filteredData = response.data.map(item => {
+          return {
+            id: item.id,
+            title: item.title,
+          }
+        });
+        setData(filteredData);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  }, []);
+
+
   return (
     <Container style={styles.container}>
       <View style={styles.imageContainer}>
@@ -18,7 +39,6 @@ const Home = () => {
         />
         <Text style={styles.name}>Nme</Text>
       </View>
-
       <View style={styles.middleSection}>
         <Text>Bem-vindo, administrador. </Text>
         <Menu />
