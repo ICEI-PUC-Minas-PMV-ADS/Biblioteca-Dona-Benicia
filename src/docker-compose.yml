@@ -16,17 +16,30 @@ services:
 
   api:
     container_name: FAST-API
-    build: .
+    build: 
+      context: ./backend
+      dockerfile: Dockerfile
     command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
-    env_file: ./app/.env
+    env_file: ./backend/app/.env
     volumes:
-      - ./:/code
+      - ./backend/:/code
     depends_on:
       - db
     ports:
       - "80:8000"
     networks:
       - nt
+  app:
+    build:
+      context: ./web
+    command: npm run dev
+    image: vite-react-express:latest
+    environment:
+      - FAST_API=http://api
+    ports:
+      - '3000:3000'
+    networks:
+        - nt
 
 
 networks:

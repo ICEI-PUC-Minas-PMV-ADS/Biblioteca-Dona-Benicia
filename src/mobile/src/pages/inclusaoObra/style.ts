@@ -86,18 +86,62 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
 },
 button: {
-  backgroundColor: '#B2FFE8',
-  position: 'absolute',
+   backgroundColor: '#B2FFE8',
+   padding: 10,
   borderRadius: 5,
-  width: 100,
-  fontSize: 16,
-  fontWeight: 'bold',
-  alignItems: 'center',
-  height: 37,
-  left: 110,
-  padding: 10,
-  top: 730,
-  color: '#2F3678',
-  
+  marginTop: 10,
 },
-});
+buttonText: {
+   color: '#2F3678',
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
+
+  inpu: {
+    borderWidth: 1,
+    borderColor: '#ccc',
+    borderRadius: 5,
+    padding: 10,
+    marginBottom: 20,
+    width: '100%',
+  },
+
+  imag: {
+    width: 200,
+    height: 200,
+    marginTop: 20,
+  },
+
+  buttonTex: {
+    backgroundColor: '#C8CAEF',
+    color: 'white',
+    padding: 10,
+    paddingTop: 70,
+    width: 200,
+    height: 200,
+    textAlign: 'center',
+    flexDirection: 'row', // adiciona essa propriedade
+    alignItems: 'center', // adiciona essa propriedade
+  },
+
+  ima: {
+    width: 200,
+    height: 200,
+    marginTop: 10,
+  },
+
+  but: {
+    marginTop: 20,
+    marginLeft: 15,
+    marginRight: 15,
+    backgroundColor: '#B2FFE8',
+    padding: 10,
+    borderRadius: 5,
+    alignItems: 'center',
+  },
+  tex: {
+    color: '#2F3678',
+    fontSize: 16,
+  },
+
+})

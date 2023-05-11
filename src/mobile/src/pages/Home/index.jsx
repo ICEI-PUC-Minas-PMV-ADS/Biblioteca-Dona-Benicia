@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Text, View, StyleSheet, Image, TouchableOpacity } from 'react-native';
+import { Text, View, StyleSheet, Image, TouchableOpacity, Button } from 'react-native';
 import Container from '../../components/container/index';
 import Footer from '../../components/footer/index';
 import Menu from '../../components/Menu/index';
@@ -39,15 +39,8 @@ const Home = () => {
         />
         <Text style={styles.name}>Nme</Text>
       </View>
-
       <View style={styles.middleSection}>
         <Text>Bem-vindo, administrador. </Text>
-        {data.map(item => (
-        <View key={item.id}>
-          <Text>{item.title}</Text>
-          <Text>{item.body}</Text>
-        </View>
-      ))}
         <Menu />
       </View>
       <View style={styles.bottomSection}>

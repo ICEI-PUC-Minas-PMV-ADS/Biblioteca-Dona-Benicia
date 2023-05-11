@@ -56,7 +56,7 @@ async def incluir_novo_livro(livro: POSTLivroDTO) -> GETLivroDTO:
             status_code=500, detail="Erro interno ao, Livro não inserido")
 
 
-@router.post("/uploadfile/{item_id}")
+@router.post("/livros/imagens/{item_id}", tags=["livros"])
 async def create_upload_file(item_id: str, file: UploadFile):
     print("entrou aqui")
     try:
@@ -66,7 +66,7 @@ async def create_upload_file(item_id: str, file: UploadFile):
         raise HTTPException(
             status_code=500, detail="Erro interno ao fazer upload da imagem")
 
-@router.post("/uploadpdf/{item_id}")
+@router.post("/livros/pdfs/{item_id}", tags=["livros"])
 async def create_upload_pdf(item_id: str, file: UploadFile):
     print("entrou aqui pdf")
     try:

@@ -1,4 +1,4 @@
-from app.settings.db import get_blob_client
+from app.settings.db import get_blob_client_img, get_blob_client_pdf
 from typing import List
 from pydantic import parse_obj_as
 from fastapi.encoders import jsonable_encoder
@@ -65,7 +65,7 @@ def obter_livros():
 
 def uploadimg_livro(item_id, file):
     try:
-        blob_client = get_blob_client(item_id, file.filename)
+        blob_client = get_blob_client_img(item_id, file.filename)
         blob_client.upload_blob(file.file, overwrite=True)
         livro=repository_livros.obter_livro_por_id(item_id)
         livro["img"] = blob_client.url
@@ -78,7 +78,7 @@ def uploadimg_livro(item_id, file):
     
 def uploadimg_pdf(item_id, file):
     try:
-        blob_client = get_blob_client(item_id, file.filename)
+        blob_client = get_blob_client_pdf(item_id, file.filename)
         blob_client.upload_blob(file.file, overwrite=True)
         livro=repository_livros.obter_livro_por_id(item_id)
         livro["pdf"] = blob_client.url
