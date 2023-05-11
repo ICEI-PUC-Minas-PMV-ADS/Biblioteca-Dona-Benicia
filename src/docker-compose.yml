@@ -14,7 +14,7 @@ services:
       MONGO_INITDB_ROOT_USERNAME: admin
       MONGO_INITDB_ROOT_PASSWORD: admin
 
-  api:
+  fast-api:
     container_name: FAST-API
     build: 
       context: ./backend
@@ -26,7 +26,7 @@ services:
     depends_on:
       - db
     ports:
-      - "80:8000"
+      - "8000:8000"
     networks:
       - nt
   app:
@@ -35,7 +35,7 @@ services:
     command: npm run dev
     image: vite-react-express:latest
     environment:
-      - FAST_API=http://api
+      - FAST_API=http://fast-api:8000
     ports:
       - '3000:3000'
     networks:

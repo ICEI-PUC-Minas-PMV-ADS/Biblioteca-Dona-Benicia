@@ -4,7 +4,7 @@ dotenv.config();
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-const { FAST_API = 'http://localhost' } = process.env;
+const { FAST_API } = process.env;
 // https://vitejs.dev/config/
 export default defineConfig({
   server: {
@@ -14,6 +14,7 @@ export default defineConfig({
       '/api': {
         target: `${FAST_API}`,
         changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, ''),
       },
     },
   },
