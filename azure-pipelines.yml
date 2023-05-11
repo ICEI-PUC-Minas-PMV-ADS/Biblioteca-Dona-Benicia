@@ -11,9 +11,13 @@ resources:
 variables:
   # Container registry service connection established during pipeline creation
   dockerRegistryServiceConnection: 'bcc035f4-71ae-45e4-86a1-5b165a4b48be'
-  imageRepository: 'backendapi'
+  imageRepositoryBackend: 'backend-api'
+  imageRepositoryFrontend: 'frontend-app'
+
   containerRegistry: 'donabenicia.azurecr.io'
-  dockerfilePath: '**/src/backend/Dockerfile'
+  dockerfilePathBackend: '**/src/backend/Dockerfile'
+  dockerfilePathFrontend: '**/src/web/Dockerfile'
+
   tag: '$(Build.BuildId)'
 
   # Agent VM image name
@@ -32,8 +36,17 @@ stages:
       displayName: Build and push an image to container registry
       inputs:
         command: buildAndPush
-        repository: $(imageRepository)
-        dockerfile: $(dockerfilePath)
+        repository: $(imageRepositoryBackend)
+        dockerfile: $(dockerfilePathBackend)
+        containerRegistry: $(dockerRegistryServiceConnection)
+        tags: |
+          $(tag)
+    - task: Docker@2
+      displayName: Build and push an image to container registry
+      inputs:
+        command: buildAndPush
+        repository: $(imageRepositoryFrontend)
+        dockerfile: $(dockerfilePathFrontend)
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
           $(tag)
