@@ -86,3 +86,66 @@ Espera-se que o sistema apresente uma interface clara e de fácil compreensão, 
 Após a realização do teste de usabilidade, conclui-se que o sistema apresenta uma interface clara e bem definida, com links de navegação intuitivos e formulários de fácil compreensão. As tarefas de Inclusão de obra, Catalogação, Consulta ao Acervo, Registro empréstimo / devolução, Emissão de multa, Cadastro de usuário e Bloqueio e desbloqueio de usuário foram realizadas com facilidade e sem complicações. Recomenda-se que o sistema seja integrado com o banco de dados para uma avaliação completa.
 
 
+# Plano de Teste - Consulta ao Acervo
+
+## Visão Geral
+O objetivo deste plano de teste é verificar o correto funcionamento da página "Consulta ao Acervo" do sistema Biblioteca Dona Benícia. Serão realizados testes para garantir que a página seja renderizada corretamente, que as buscas por título e autor retornem resultados corretos, e que a mensagem de ausência de resultados seja exibida quando apropriado.
+
+## Configuração de Teste
+- Dispositivo: Desktop com Windows 10
+- Navegador: Google Chrome versão 92.0
+
+## Casos de Teste
+### 1. Renderização da Página
+#### Descrição
+Verificar se a página "Consulta ao Acervo" é renderizada corretamente.
+
+#### Passos de Teste
+1. Acessar a página "Consulta ao Acervo".
+2. Verificar se o cabeçalho da página está visível.
+3. Verificar se o campo de pesquisa por título está visível.
+4. Verificar se o campo de pesquisa por autor está visível.
+5. Verificar se o botão de busca está visível.
+6. Verificar se a lista de resultados está visível.
+
+#### Critérios de Sucesso
+Todos os elementos mencionados nos passos de teste devem estar visíveis e a página deve ser renderizada corretamente.
+
+### 2. Busca por Título
+#### Descrição
+Verificar se a busca por título retorna os resultados corretos.
+
+#### Passos de Teste
+1. Acessar a página "Consulta ao Acervo".
+2. Digitar um título válido no campo de pesquisa por título.
+3. Clicar no botão de busca.
+4. Verificar se a lista de resultados exibe os itens correspondentes ao título pesquisado.
+
+#### Critérios de Sucesso
+A lista de resultados deve conter apenas os itens cujos títulos correspondam à pesquisa realizada.
+
+### 3. Busca por Autor
+#### Descrição
+Verificar se a busca por autor retorna os resultados corretos.
+
+#### Passos de Teste
+1. Acessar a página "Consulta ao Acervo".
+2. Digitar um autor válido no campo de pesquisa por autor.
+3. Clicar no botão de busca.
+4. Verificar se a lista de resultados exibe os itens correspondentes ao autor pesquisado.
+
+#### Critérios de Sucesso
+A lista de resultados deve conter apenas os itens cujos autores correspondam à pesquisa realizada.
+
+### 4. Mensagem de Ausência de Resultados
+#### Descrição
+Verificar se é exibida a mensagem adequada quando nenhuma resultado é encontrado.
+
+#### Passos de Teste
+1. Acessar a página "Consulta ao Acervo".
+2. Realizar uma busca que não retorne nenhum resultado.
+3. Verificar se a mensagem "Não foi possível localizar resultados" é exibida.
+
+#### Critérios de Sucesso
+A mensagem de ausência de resultados deve ser exibida corretamente quando nenhuma resultado é encontrado.
+
