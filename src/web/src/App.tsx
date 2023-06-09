@@ -2,6 +2,9 @@ import Home from "./Screen/Home";
 import Login from "./Screen/login";
 import Livro from "./Screen/cadastroLivro";
 import Person from "./Screen/usuario";
+import ConsultaAcervo from "./Screen/consultaAcervo";
+
+
 import {
   BrowserRouter as Router,
   Routes,
@@ -19,6 +22,8 @@ function App() {
           <Route path="/Home" element={<Home />} />
           <Route path="/Livro" element={<Livro />} />
           <Route path="/Person" element={<Person />} />
+          <Route path="/ConsultaAcervo" element={<ConsultaAcervo />} />
+
         </Routes>
       </Router>
     </div>
