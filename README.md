@@ -17,9 +17,9 @@ O sistema deve facilitar o gerenciamento da biblioteca, tornando os processos ma
 * Platiní Gomes da Rocha
 * Priscilha Sansão Alves
 
-## Orientador
+## Orientadora
 
-* Viviane Cristina Dias
+* Prof.ª Viviane Cristina Dias
 
 ## Instruções de utilização
 
