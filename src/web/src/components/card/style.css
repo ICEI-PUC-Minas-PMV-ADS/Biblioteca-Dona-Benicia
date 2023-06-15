@@ -1,0 +1,116 @@
+.card {
+  /* Estilos para o card */
+  cursor: pointer;
+  width: 200px;
+  margin: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+
+  /* Estilos para quando o mouse estiver sobre o card */
+  &:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.object-cover {
+  /* Estilos para a imagem dentro do card */
+  width: 100%;
+  height: 100%;
+}
+
+.modal {
+  /* Estilos para o modal */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  width: 400px;
+  max-width: 90%;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.modal-overlay {
+  /* Estilos para o overlay do modal */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-header {
+  /* Estilos para o cabeçalho do modal */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.close-button {
+  /* Estilos para o botão de fechar do modal */
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.my-button {
+  /* Estilos para os botões */
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.my-button:hover {
+  background-color: #45a049;
+}
+
+.button-group {
+  /* Estilos para o grupo de botões no modal */
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+.delete-button {
+  background-color: #ff0000;
+}
+
+.delete-button:hover {
+  background-color: #cc0000;
+}
+/* ...existing CSS rules */
+
+.input-field {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: #007bff;
+}
+.uploaded-image {
+  max-width: 100px; /* Adjust the value as needed */
+  max-height: 100px; /* Adjust the value as needed */
+}
+
+
+/* ...existing CSS rules */

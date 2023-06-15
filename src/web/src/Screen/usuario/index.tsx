@@ -43,6 +43,7 @@ const Person: React.FC = () => {
 
     limparInputs();
   };
+  
 
   return (
     
@@ -176,7 +177,6 @@ const Person: React.FC = () => {
         </main>
       </div>
       </div>
- 
   );
 };
 export default Person;

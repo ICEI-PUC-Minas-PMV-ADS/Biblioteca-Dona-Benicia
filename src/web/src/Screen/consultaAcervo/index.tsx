@@ -1,17 +1,25 @@
 import React, { useState, useEffect } from "react";
 import { FiSearch, FiChevronDown, FiLoader } from "react-icons/fi";
-import { Accordion, AccordionItem, AccordionItemHeading, AccordionItemButton, AccordionItemPanel } from 'react-accessible-accordion';
+import {
+  Accordion,
+  AccordionItem,
+  AccordionItemHeading,
+  AccordionItemButton,
+  AccordionItemPanel,
+} from "react-accessible-accordion";
 import "react-accessible-accordion/dist/fancy-example.css";
 import Header from "../../components/header";
 import Footer from "../../components/footer";
 import Card from "../../components/card";
 
-
 interface Book {
-  id: string;
+  _id: string;
   titulo: string;
   img: string;
   autor: string;
+  edicao: string;
+  localPublicacao: string;
+  editora: string;
 }
 
 const ConsultaAcervo: React.FC = () => {
@@ -22,6 +30,8 @@ const ConsultaAcervo: React.FC = () => {
   const [selectedFilter, setSelectedFilter] = useState<string>("titulo");
   const [showResults, setShowResults] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isEditModalOpen, setEditModalOpen] = useState(false);
+  const [selectedBookForEdit, setSelectedBookForEdit] = useState<Book | null>(null);
 
   useEffect(() => {
     fetchBooks();
@@ -29,7 +39,9 @@ const ConsultaAcervo: React.FC = () => {
 
   const fetchBooks = async () => {
     try {
-      const response = await fetch("https://donabenicia-dev.azurewebsites.net/livros"); // Substitua pela URL da sua API
+      const response = await fetch(
+        "https://donabenicia-dev.azurewebsites.net/livros"
+      ); // Substitua pela URL da sua API
       const data = await response.json();
       setBooks(data);
     } catch (error) {
@@ -39,11 +51,12 @@ const ConsultaAcervo: React.FC = () => {
 
   const handleSearch = async () => {
     let filtered: Book[] = [];
-    const mensagemElement: HTMLElement | null = document.getElementById("mensagem");
+    const mensagemElement: HTMLElement | null =
+      document.getElementById("mensagem");
     if (mensagemElement instanceof HTMLElement) {
       mensagemElement.innerHTML = ""; // Clear the message
     }
-  
+
     if (selectedFilter === "livro") {
       filtered = books;
     } else if (searchTerm !== "") {
@@ -65,25 +78,29 @@ const ConsultaAcervo: React.FC = () => {
     } else {
       filtered = books;
     }
-  
-    if (filtered.length === 0 && searchTerm !== "" && mensagemElement instanceof HTMLElement) {
+
+    if (
+      filtered.length === 0 &&
+      searchTerm !== "" &&
+      mensagemElement instanceof HTMLElement
+    ) {
       mensagemElement.innerHTML = "<h1>Não foi possível localizar.</h1>";
     }
-  
+
     setIsLoading(true);
-  
+
     // Simulating an asynchronous operation
     await new Promise((resolve) => setTimeout(resolve, 2000));
-  
+
     setFilteredBooks(filtered);
     setSearchTerm("");
     setShowResults(true);
     setIsLoading(false);
   };
-  
 
   const handleInputClick = () => {
-    const mensagemElement: HTMLElement | null = document.getElementById("mensagem");
+    const mensagemElement: HTMLElement | null =
+      document.getElementById("mensagem");
     if (mensagemElement instanceof HTMLElement) {
       mensagemElement.innerHTML = ""; // Clear the message
     }
@@ -97,14 +114,24 @@ const ConsultaAcervo: React.FC = () => {
     // Lógica para abrir o PDF do livro com base no ID do livro
     console.log("Open PDF of book with ID:", bookId);
   };
+  const handleEditarClick = (bookId: string) => {
+    const book = books.find((book) => book._id === bookId);
+    if (book) {
+      setSelectedBookForEdit(book);
+      setEditModalOpen(true);
+    }
+  };
 
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
 
       <main className="px-2 flex-grow">
-      <div className="w-full p-2 mx-auto border bg-customGreen border-gray-300 rounded-md">
-          <label htmlFor="searchTerm" className="block text-sm font-medium leading-6 text-white">
+        <div className="w-full p-2 mx-auto border bg-customGreen border-gray-300 rounded-md">
+          <label
+            htmlFor="searchTerm"
+            className="block text-sm font-medium leading-6 text-white"
+          >
             DIGITE O TERMO PARA A PESQUISA:
           </label>
           <div className="relative">
@@ -113,7 +140,9 @@ const ConsultaAcervo: React.FC = () => {
               id="searchTerm"
               value={searchTerm}
               onClick={handleInputClick} // Add onClick event handler to clear the message
-              onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearchTerm(e.target.value)}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                setSearchTerm(e.target.value)
+              }
               placeholder={`Pesquisar por ${selectedFilter}`}
               className="p-2 pl-10 border-none outline-none w-full bg-input text-gray-500 rounded-md"
             />
@@ -126,7 +155,10 @@ const ConsultaAcervo: React.FC = () => {
             <AccordionItemHeading>
               <AccordionItemButton className="p-2 border bg-customGreen border-gray-300 rounded-md mb-">
                 <div className="flex items-center justify-between w-full">
-                  <label htmlFor="filter" className="block text-sm font-medium leading-6 text-white">
+                  <label
+                    htmlFor="filter"
+                    className="block text-sm font-medium leading-6 text-white"
+                  >
                     Buscar por:
                   </label>
                   <FiChevronDown />
@@ -191,11 +223,19 @@ const ConsultaAcervo: React.FC = () => {
         {showResults && (
           <div className="flex flex-wrap justify-center bg-white mx-4 rounded-md">
             {filteredBooks.map((book: Book, index: number) => (
-              <div key={book.id} className="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 xl:w-1/4 mb-4">
-                <Card titulo={book.titulo}
+              <div
+                key={book._id}
+                className="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 xl:w-1/4 mb-4"
+              >
+                <Card
+                  _id={book._id}
+                  titulo={book.titulo}
                   img={book.img}
                   autor={book.autor}
-                  onClick={() => handleImageClick(book.id)}
+                  edicao={book.edicao}
+                  localPublicacao={book.localPublicacao}
+                  editora={book.editora}
+                  onClick={() => handleImageClick(book._id)} // Passando o ID do livro corretamente
                 />
               </div>
             ))}
@@ -210,6 +250,3 @@ const ConsultaAcervo: React.FC = () => {
 };
 
 export default ConsultaAcervo;
-
-                 
-
