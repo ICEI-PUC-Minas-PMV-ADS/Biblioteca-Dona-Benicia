@@ -3,3 +3,5 @@ pymongo
 python-dotenv
 azure-storage-blob 
 azure-identity
+python-jose[cryptography]
+passlib[bcrypt]

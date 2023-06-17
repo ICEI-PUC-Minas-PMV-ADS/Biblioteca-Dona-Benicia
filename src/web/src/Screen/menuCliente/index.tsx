@@ -7,27 +7,27 @@ import Avatar from "../../components/avatar/index";
 
 const people = [
   {
-    name: "Inclusão de obra catalogação",
+    name: "Renovar",
     email: "leslie.alexander@example.com",
     role: <FaPlus className="text-white text-2xl" />,
-    path: "/livro",
+    path: "/AcervoCliente",
   },
   {
     name: "Consulta ao Acervo",
     role: <FaSearch className="text-white text-2xl" />,
-    path: "/ConsultaAcervo",
+    path: "/AcervoCliente",
   },
   {
-    name: "Registro empréstimo / devolução",
+    name: "Minhas Reservas",
     email: "dries.vincent@example.com",
     role: <FaFileAlt className="text-white text-2xl" />,
-    path: "/EmprestimoAdmin",
+    path: "",
   },
   {
-    name: "Emissão de multa",
+    name: "Consulta Valor de Multa",
     email: "lindsay.walton@example.com",
     role: <FaMoneyBill className="text-white text-2xl" />,
-    path: "/Multa",
+    path: "",
   },
   {
     name: "Cadastro de usuário ",
@@ -42,7 +42,7 @@ const people = [
   },
 ];
 
-export default function Home() {
+export default function ConsultaCliente() {
   return (
     <div className="flex flex-col min-h-screen">
       <header className="bg-customGre">
@@ -54,7 +54,7 @@ export default function Home() {
           </div>
         </nav>
         <div className="bg-customGre font-bold text-customGreen p-4 my-4">
-          <p className="text-center">Bem-vindo, administrador.</p>
+          <p className="text-center">Bem-vindo, aluno.</p>
         </div>
       </header>
       <main className="flex-grow bg-customGre">

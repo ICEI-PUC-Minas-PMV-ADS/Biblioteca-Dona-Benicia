@@ -42,7 +42,15 @@ class PersonRepository:
             return result
         else:
             raise FileNotFoundError("Esse ID nao existe na base de dados")
-
+    
+    
+    def get_by_username(self, username: str):
+        result = self.collection.find_one({"username": username})
+        if result:
+            return result
+        else:
+            return None
+    
     # get
     def obter_usuario(self):
         return list(self.collection.find(limit=20))
