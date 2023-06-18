@@ -1,42 +1,93 @@
-import Home from "./Screen/Home";
-import Login from "./Screen/login";
-import LoginAdmin from "./Screen/loginAdmin";
-import Livro from "./Screen/cadastroLivro";
-import Person from "./Screen/usuario";
-import ConsultaAcervo from "./Screen/consultaAcervo";
-import Atualizar from "./Screen/atualizarCadastro";
-import Cliente from "./Screen/menuCliente";
-import AcervoCliente from "./Screen/AcervoCliente";
-import EmprestimoAdmin from "./Screen/EmprestimoAdmin"
-import Multa from "./Screen/multaAdmin"
-
-
+import React from "react";
 import {
   BrowserRouter as Router,
   Routes,
   Route,
   Navigate,
 } from "react-router-dom";
+import { isTokenExpired } from "./jwt";
+
+// Import your components
+import Home from "./Screen/Home";
+import Login from "./Screen/login";
+import LoginAdmin from "./Screen/loginAdmin";
+import Person from "./Screen/usuario";
+import Cliente from "./Screen/menuCliente";
+import EmprestimoAdmin from "./Screen/EmprestimoAdmin";
+import Multa from "./Screen/multaAdmin";
+import AcervoCliente from "./Screen/AcervoCliente";
+import Atualizar from "./Screen/atualizarCadastro";
+import Livro from "./Screen/cadastroLivro";
+import ConsultaAcervo from "./Screen/consultaAcervo";
+
+interface PrivateRouteProps {
+  path: string;
+  component: React.ComponentType<any>;
+}
+
+const PrivateRoute: React.FC<PrivateRouteProps> = ({
+  component: Component,
+  ...rest
+}) => {
+  const isAuthenticated = !isTokenExpired(); // Implement this function according to your authentication logic
+
+  return isAuthenticated ? (
+    <Component />
+  ) : (
+    <Navigate to="/login" replace state={{ from: rest.path }} />
+  );
+};
 
 function App() {
   return (
     <div className="App">
       <Router>
         <Routes>
-          <Route path="*" element={<Navigate to="/Home" />} />
-          <Route path="/Cliente" element={<Cliente />} />
-          <Route path="/EmprestimoAdmin" element={<EmprestimoAdmin />} />
-          <Route path="/Multa" element={<Multa />} />
-          <Route path="/Login" element={<Login />} />
-          <Route path="/admin/Login" element={<LoginAdmin />} />
-          <Route path="/Login" element={<Login />} />
-          <Route path="/AcervoCliente" element={<AcervoCliente />} />
-          <Route path="/Atualizar" element={<Atualizar />} />
-          <Route path="/Home" element={<Home />} />
-          <Route path="/Livro" element={<Livro />} />
-          <Route path="/Person" element={<Person />} />
-          <Route path="/ConsultaAcervo" element={<ConsultaAcervo />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/admin/login" element={<LoginAdmin />} />
+          <Route path="/person" element={<Person />} />
 
+          <Route
+            path="/"
+            element={<PrivateRoute component={Home} path="/" />}
+          />
+          <Route
+            path="/Cliente"
+            element={<PrivateRoute component={Cliente} path="/Cliente" />}
+          />
+          <Route
+            path="/EmprestimoAdmin"
+            element={
+              <PrivateRoute
+                component={EmprestimoAdmin}
+                path="/EmprestimoAdmin"
+              />
+            }
+          />
+          <Route
+            path="/Multa"
+            element={<PrivateRoute component={Multa} path="/Multa" />}
+          />
+          <Route
+            path="/AcervoCliente"
+            element={
+              <PrivateRoute component={AcervoCliente} path="/AcervoCliente" />
+            }
+          />
+          <Route
+            path="/Atualizar"
+            element={<PrivateRoute component={Atualizar} path="/Atualizar" />}
+          />
+          <Route
+            path="/Livro"
+            element={<PrivateRoute component={Livro} path="/Livro" />}
+          />
+          <Route
+            path="/ConsultaAcervo"
+            element={
+              <PrivateRoute component={ConsultaAcervo} path="/ConsultaAcervo" />
+            }
+          />
         </Routes>
       </Router>
     </div>
