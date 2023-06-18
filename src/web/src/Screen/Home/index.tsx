@@ -1,9 +1,16 @@
+import React, { useState, useEffect } from "react";
 import { FaPlus, FaSearch, FaFileAlt, FaMoneyBill } from "react-icons/fa";
 import { BsPersonPlusFill } from "react-icons/bs";
 import { RiLock2Line } from "react-icons/ri";
 import { Link } from "react-router-dom";
 import Footer from "../../components/footer/index";
 import Avatar from "../../components/avatar/index";
+import {isTokenExpired} from '../../jwt'
+import { useLocation } from "react-router-dom";
+
+
+
+
 
 const people = [
   {
@@ -33,7 +40,7 @@ const people = [
     name: "Cadastro de usuário ",
     email: "courtney.henry@example.com",
     role: <BsPersonPlusFill className="text-white text-2xl" />,
-    path: "/admin/login",
+    path: "login",
   },
   {
     name: "Bloqueio e desbloqueio de usuário",
@@ -42,14 +49,20 @@ const people = [
   },
 ];
 
+
+
 export default function Home() {
+  const [userName, setUserName] = useState(""); // Variável de estado para o nome do usuário
+  const location = useLocation();
+  
+  
   return (
     <div className="flex flex-col min-h-screen">
       <header className="bg-customGre">
         <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
           <div className="flex lg:flex-1">
             <a href="#" className="-m-1.5 p-1.5">
-              <Avatar />
+              
             </a>
           </div>
         </nav>

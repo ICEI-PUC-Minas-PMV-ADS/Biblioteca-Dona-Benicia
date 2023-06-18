@@ -23,7 +23,7 @@ function App() {
     <div className="App">
       <Router>
         <Routes>
-          <Route path="*" element={<Navigate to="/Cliente" />} />
+          <Route path="*" element={<Navigate to="/Home" />} />
           <Route path="/Cliente" element={<Cliente />} />
           <Route path="/EmprestimoAdmin" element={<EmprestimoAdmin />} />
           <Route path="/Multa" element={<Multa />} />

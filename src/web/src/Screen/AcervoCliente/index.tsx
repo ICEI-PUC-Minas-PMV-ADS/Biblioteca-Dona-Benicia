@@ -11,6 +11,7 @@ import "react-accessible-accordion/dist/fancy-example.css";
 import Header from "../../components/header";
 import Footer from "../../components/footer";
 import Card from "../../components/cardCliente";
+import axiosInstance from "../../axios";
 
 interface Book {
   _id: string;
@@ -36,16 +37,14 @@ const AcervoCliente: React.FC = () => {
 
   const fetchBooks = async () => {
     try {
-      const response = await fetch(
-        "https://donabenicia-dev.azurewebsites.net/livros"
-      ); // Replace with your API URL
-      const data = await response.json();
-      setBooks(data);
+
+      const response = await axiosInstance.get("/livros");
+
+      setBooks(response.data);
     } catch (error) {
       console.error("Error fetching books:", error);
     }
   };
-
   const handleSearch = async () => {
     let filtered: Book[] = [];
     const mensagemElement: HTMLElement | null =

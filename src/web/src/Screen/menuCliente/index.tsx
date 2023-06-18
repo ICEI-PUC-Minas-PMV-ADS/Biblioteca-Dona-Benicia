@@ -33,7 +33,7 @@ const people = [
     name: "Cadastro de usuário ",
     email: "courtney.henry@example.com",
     role: <BsPersonPlusFill className="text-white text-2xl" />,
-    path: "/admin/login",
+    path: "/login",
   },
   {
     name: "Bloqueio e desbloqueio de usuário",
@@ -49,7 +49,7 @@ export default function ConsultaCliente() {
         <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
           <div className="flex lg:flex-1">
             <a href="#" className="-m-1.5 p-1.5">
-              <Avatar />
+            
             </a>
           </div>
         </nav>
