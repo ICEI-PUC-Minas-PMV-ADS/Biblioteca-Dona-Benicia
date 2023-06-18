@@ -1,8 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect} from "react";
 import Header from "../header";
 import Footer from "../footer";
-import api from "../../services/ApiLivros";
 import { FaSpinner } from "react-icons/fa";
+import axiosInstance from "../../axios";
+import { useNavigate } from 'react-router-dom';
+
+
 
 const MyForm: React.FC = () => {
   const [titulo, setTitle] = useState("");
@@ -11,13 +14,16 @@ const MyForm: React.FC = () => {
   const [localPublicacao, setPublicationLocation] = useState("");
   const [editora, setPublisher] = useState("");
   const [img, setImg] = useState<File | null>(null);
-  const [isLoading, setLoading] = useState(false); // Estado de carregamento
+  const [isLoading, setLoading] = useState(false); 
+  const navigate = useNavigate();
+
+
 
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
       setImg(file);
-    }
+    } 
   };
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -33,14 +39,23 @@ const MyForm: React.FC = () => {
         editora,
         img,
       };
-      const livroResponse = await api.post("/livros", livroData);
+      const livroResponse = await axiosInstance.post("/livros", livroData);
 
       const item_id = livroResponse.data._id;
 
       if (img && item_id) {
+        try{
         const formData = new FormData();
         formData.append("file", img);
-        await api.post(`/livros/imagens/${item_id}`, formData);
+        await axiosInstance.post(`/livros/imagens/${item_id}`, formData);
+      } catch (error: any) {
+        if (error.response && error.response.status === 401) {
+          // Redirecionar para a página de login
+          navigate("/login");
+        } else {
+          console.error("Error fetching books:", error);
+        }
+      }
       }
 
       setLoading(false); // Desativa o estado de carregamento

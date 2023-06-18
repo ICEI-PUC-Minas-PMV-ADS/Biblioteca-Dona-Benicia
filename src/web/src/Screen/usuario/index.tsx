@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import backgroundImage from "../../assets/livraria.png";
 import "./style.css";
 import api from "../../services/ApiLivros";
+import { useNavigate } from 'react-router-dom';
+
 
 const Person: React.FC = () => {
   const [nome, setNome] = useState("");
@@ -9,7 +11,9 @@ const Person: React.FC = () => {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
   const [senhaRepetida, setSenhaRepetida] = useState("");
-  const [username, setUsername] = useState(""); // Adicione o estado para o campo "username"
+  const [username, setUsername] = useState("");
+  const navigate = useNavigate();
+  // Adicione o estado para o campo "username"
 
   function limparInputs() {
     setNome("");
@@ -38,9 +42,15 @@ const Person: React.FC = () => {
       console.log("Usuário cadastrado com sucesso!");
       console.log(response.data);
       limparInputs();
-    } catch (error) {
-      console.error(error);
-      alert("Ocorreu um erro ao cadastrar o usuário.");
+      navigate("/login");
+
+    } catch (error: any) {
+      if (error.response && error.response.status === 401) {
+        // Redirecionar para a página de login
+        navigate("/login");
+      } else {
+        console.error("Error fetching books:", error);
+      }
     }
   };
 

@@ -6,12 +6,7 @@ import Footer from "../../components/footer/index";
 import Avatar from "../../components/avatar/index";
 
 const people = [
-  {
-    name: "Renovar",
-    email: "leslie.alexander@example.com",
-    role: <FaPlus className="text-white text-2xl" />,
-    path: "/AcervoCliente",
-  },
+ 
   {
     name: "Consulta ao Acervo",
     role: <FaSearch className="text-white text-2xl" />,
@@ -35,11 +30,7 @@ const people = [
     role: <BsPersonPlusFill className="text-white text-2xl" />,
     path: "/login",
   },
-  {
-    name: "Bloqueio e desbloqueio de usuário",
-    role: <RiLock2Line className="text-white text-2xl" />,
-    path: "",
-  },
+  
 ];
 
 export default function ConsultaCliente() {
@@ -54,7 +45,7 @@ export default function ConsultaCliente() {
           </div>
         </nav>
         <div className="bg-customGre font-bold text-customGreen p-4 my-4">
-          <p className="text-center">Bem-vindo, aluno.</p>
+          <p className="text-center">Bem-vindo fique à vontade para consulta nossas obrar e gerenciar sua reserva.</p>
         </div>
       </header>
       <main className="flex-grow bg-customGre">
