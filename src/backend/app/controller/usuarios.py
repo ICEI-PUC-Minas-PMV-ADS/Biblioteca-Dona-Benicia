@@ -14,9 +14,10 @@ repository_usuarios = PersonRepository(client)
 def get_password_hash(password):
     return pwd_context.hash(password)
 
-def incluir_novo_usuario(usuario: POSTUsuarioDTO):
+def incluir_novo_usuario(usuario: POSTUsuarioDTO,admin):
     try:
         novo_usuario = jsonable_encoder(usuario)
+        novo_usuario["admin"] = admin
         novo_usuario["senha"] = get_password_hash(novo_usuario["senha"])
         user = repository_usuarios.incluir_novo_usuario(novo_usuario)
         logging.info(user)

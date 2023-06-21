@@ -51,12 +51,21 @@ async def editar_usuario_por_id(id: str, usuario_alterado: PUTUsuario, current_u
              response_model=GETUsuarioDTO, tags=["usuarios"])
 async def incluir_novo_usuario(usuario: POSTUsuarioDTO) -> GETUsuarioDTO:
     try:
-        return controller_usuarios.incluir_novo_usuario(usuario)
+        return controller_usuarios.incluir_novo_usuario(usuario, False)
     except:
         raise HTTPException(
             status_code=500, detail="Erro interno ao, usuario não inserido")
 
-# Excluir
+
+@router.post('/admin', response_description="usuario inserido",
+             response_model=GETUsuarioDTO, tags=["usuarios"])
+async def incluir_admin(usuario: POSTUsuarioDTO) -> GETUsuarioDTO:
+    try:
+        return controller_usuarios.incluir_novo_usuario(usuario,True)
+    except:
+        raise HTTPException(
+            status_code=500, detail="Erro interno ao, usuario não inserido")
+
 
 
 @router.delete('/usuarios/{id}', response_description="ususario deletado",

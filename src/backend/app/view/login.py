@@ -41,7 +41,7 @@ def create_access_token(data: dict, expires_delta: timedelta):
         expire = datetime.utcnow() + expires_delta
     else:
         expire = datetime.utcnow() + timedelta(minutes=15)
-    to_encode.update({"exp": expire})
+    to_encode.update({"exp": expire, "role": data["role"]})
     encoded_jwt = jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
     return encoded_jwt
 
@@ -77,7 +77,9 @@ def login(form_data: OAuth2PasswordRequestForm = Depends()):
 
     access_token_expires = timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
     print(user)
+    role = "admin" if user["admin"] else "user"
     access_token = create_access_token(
-        data={"sub": str(user["_id"])}, expires_delta=access_token_expires
+        data={"sub": str(user["_id"]), "role": role}, expires_delta=access_token_expires
+
     )
     return {"access_token": access_token, "token_type": "bearer"}
