@@ -32,5 +32,9 @@ https://github.com/ICEI-PUC-Minas-PMV-ADS/Biblioteca-Dona-Benicia/blob/develop/s
 
 ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/Biblioteca-Dona-Benicia/assets/81052476/7aa6a41e-de77-443b-8aac-b11f320153f6)
 
+### Modal com as informações da Obra Pesquisada
+
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/Biblioteca-Dona-Benicia/assets/81052476/3b44beaf-fa79-435c-a22d-793a0888e261)
+
 > **Links Úteis**:
 > - [Ferramentas de Test para Java Script](https://geekflare.com/javascript-unit-testing/)
