@@ -16,20 +16,9 @@ const people = [
     name: "Minhas Reservas",
     email: "dries.vincent@example.com",
     role: <FaFileAlt className="text-white text-2xl" />,
-    path: "",
+    path: "/Reservas",
   },
-  {
-    name: "Consulta Valor de Multa",
-    email: "lindsay.walton@example.com",
-    role: <FaMoneyBill className="text-white text-2xl" />,
-    path: "",
-  },
-  {
-    name: "Cadastro de usuário ",
-    email: "courtney.henry@example.com",
-    role: <BsPersonPlusFill className="text-white text-2xl" />,
-    path: "/login",
-  },
+  
   
 ];
 

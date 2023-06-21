@@ -19,6 +19,7 @@ import AcervoCliente from "./Screen/AcervoCliente";
 import Atualizar from "./Screen/atualizarCadastro";
 import Livro from "./Screen/cadastroLivro";
 import ConsultaAcervo from "./Screen/consultaAcervo";
+import Reservas from "./Screen/reservas"
 
 interface PrivateRouteProps {
   path: string;
@@ -50,6 +51,10 @@ function App() {
           <Route
             path="/"
             element={<PrivateRoute component={Home} path="/" />}
+          />
+          <Route
+            path="/Reservas"
+            element={<PrivateRoute component={Reservas} path="/" />}
           />
           <Route
             path="/Cliente"

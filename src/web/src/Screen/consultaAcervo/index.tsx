@@ -11,6 +11,8 @@ import "react-accessible-accordion/dist/fancy-example.css";
 import Header from "../../components/header";
 import Footer from "../../components/footer";
 import Card from "../../components/card";
+import axiosInstance from "../../axios";
+import { useNavigate } from 'react-router-dom';
 
 interface Book {
   _id: string;
@@ -32,6 +34,7 @@ const ConsultaAcervo: React.FC = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [isEditModalOpen, setEditModalOpen] = useState(false);
   const [selectedBookForEdit, setSelectedBookForEdit] = useState<Book | null>(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetchBooks();
@@ -39,21 +42,21 @@ const ConsultaAcervo: React.FC = () => {
 
   const fetchBooks = async () => {
     try {
-      const response = await fetch(
-        "https://donabenicia-dev.azurewebsites.net/livros"
-      ); // Substitua pela URL da sua API
-      const data = await response.json();
-      setBooks(data);
-    } catch (error) {
-      console.error("Error fetching books:", error);
+      const response = await axiosInstance.get("/livros");
+      setBooks(response.data);
+    } catch (error: any) {
+      if (error.response && error.response.status === 401) {
+        navigate("/login");
+      } else {
+        console.error("Error fetching books:", error);
+      }
     }
   };
 
   const handleSearch = async () => {
     let filtered: Book[] = [];
-    const mensagemElement: HTMLElement | null =
-      document.getElementById("mensagem");
-    if (mensagemElement instanceof HTMLElement) {
+    const mensagemElement = document.getElementById("mensagem");
+    if (mensagemElement) {
       mensagemElement.innerHTML = ""; // Clear the message
     }
 
@@ -99,9 +102,8 @@ const ConsultaAcervo: React.FC = () => {
   };
 
   const handleInputClick = () => {
-    const mensagemElement: HTMLElement | null =
-      document.getElementById("mensagem");
-    if (mensagemElement instanceof HTMLElement) {
+    const mensagemElement = document.getElementById("mensagem");
+    if (mensagemElement) {
       mensagemElement.innerHTML = ""; // Clear the message
     }
   };
@@ -111,9 +113,9 @@ const ConsultaAcervo: React.FC = () => {
   };
 
   const handleImageClick = (bookId: string) => {
-    // Lógica para abrir o PDF do livro com base no ID do livro
     console.log("Open PDF of book with ID:", bookId);
   };
+
   const handleEditarClick = (bookId: string) => {
     const book = books.find((book) => book._id === bookId);
     if (book) {
@@ -139,7 +141,7 @@ const ConsultaAcervo: React.FC = () => {
               type="text"
               id="searchTerm"
               value={searchTerm}
-              onClick={handleInputClick} // Add onClick event handler to clear the message
+              onClick={handleInputClick}
               onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                 setSearchTerm(e.target.value)
               }
@@ -220,33 +222,31 @@ const ConsultaAcervo: React.FC = () => {
         </div>
         <div id="mensagem" className="text-center text-texto mb-4"></div>
 
-        {showResults && (
-          <div className="flex flex-wrap justify-center bg-white mx-4 rounded-md">
-            {filteredBooks.map((book: Book, index: number) => (
-              <div
-                key={book._id}
-                className="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 xl:w-1/4 mb-4"
-              >
-                <Card
-                  _id={book._id}
-                  titulo={book.titulo}
-                  img={book.img}
-                  autor={book.autor}
-                  edicao={book.edicao}
-                  localPublicacao={book.localPublicacao}
-                  editora={book.editora}
-                  onClick={() => handleImageClick(book._id)} // Passando o ID do livro corretamente
-                />
-              </div>
-            ))}
-          </div>
-        )}
-      </main>
-      <div className="mt-auto">
-        <Footer />
-      </div>
+<div className="flex flex-wrap justify-center bg-white mx-4 rounded-md">
+  {books.map((book: Book, index: number) => (
+    <div
+      key={book._id}
+      className="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 xl:w-1/4 mb-4"
+    >
+      <Card
+        _id={book._id}
+        titulo={book.titulo}
+        img={book.img}
+        autor={book.autor}
+        edicao={book.edicao}
+        localPublicacao={book.localPublicacao}
+        editora={book.editora}
+        onClick={() => handleImageClick(book._id)}
+      />
     </div>
-  );
+  ))}
+</div>
+</main>
+<div className="mt-auto">
+<Footer />
+</div>
+</div>
+);
 };
 
 export default ConsultaAcervo;

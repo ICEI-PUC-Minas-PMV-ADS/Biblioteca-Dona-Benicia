@@ -16,6 +16,15 @@ export const decodeToken = (): JwtPayload | null => {
   return null;
 };
 
+export const userId = (): string | undefined  => {
+  const token = getToken();
+  if (token) {
+    const decoded = jwtDecode<JwtPayload>(token);
+    return decoded.sub;
+  }
+  return undefined;
+}
+
 export const isTokenExpired = (): boolean => {
   const token = getToken();
   if (token) {

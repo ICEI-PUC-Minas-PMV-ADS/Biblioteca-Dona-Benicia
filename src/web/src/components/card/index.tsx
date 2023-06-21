@@ -4,6 +4,9 @@ import Modal from "react-modal";
 import { FiX, FiEdit, FiTrash } from "react-icons/fi";
 import "./style.css";
 import api from "../../services/ApiLivros";
+import axiosInstance from "../../axios";
+import { useNavigate } from 'react-router-dom';
+
 
 type CardProps = {
   _id: string;
@@ -38,6 +41,8 @@ const Card: React.FC<CardProps> = ({
   const [editedEdicao, setEditedEdicao] = useState(edicao);
   const [editedLocalPublicacao, setEditedLocalPublicacao] = useState(localPublicacao);
   const [editedEditora, setEditedEditora] = useState(editora);
+  const navigate = useNavigate();
+
 
   const handleLocalPublicacaoChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setEditedLocalPublicacao(event.target.value);
@@ -76,8 +81,7 @@ const Card: React.FC<CardProps> = ({
 
     try {
       console.log("ID do livro a ser excluído:", bookId);
-      await api.delete(`/livros/${bookId}`);
-
+      await axiosInstance.delete(`/livros/${bookId}`);
       if (onExcluir) {
         onExcluir(bookId);
       }
@@ -85,12 +89,17 @@ const Card: React.FC<CardProps> = ({
       setLoading(false);
       alert("Livro excluído com sucesso!");
       window.location.reload();
-    } catch (error) {
-      console.error(error);
-      alert("Ocorreu um erro ao excluir o livro.");
-      setLoading(false);
+    } catch (error: any) {
+      if (error.response && error.response.status === 401) {        // Redirecionar para a página de login
+        navigate("/login");
+      } else {
+        console.error("Error fetching books:", error);
+        alert("Ocorreu um erro ao excluir o livro.");
+        setLoading(false);
+      }
     }
   };
+
 
   const handleCardClick = () => {
     if (onClick) {
@@ -129,17 +138,21 @@ const Card: React.FC<CardProps> = ({
 
       console.log("Updating book:", updatedBook);
 
-      await api.put(`/livros/${_id}`, updatedBook);
+      await axiosInstance.put(`/livros/${_id}`, updatedBook);
 
       console.log("Book updated successfully!");
 
       setLoading(false);
       closeModal();
       window.location.reload();
-    } catch (error) {
-      console.error("Error updating book:", error);
-      setLoading(false);
-      alert("Ocorreu um erro ao atualizar o livro.");
+    } catch (error: any) {
+      if (error.response && error.response.status === 401) {        // Redirecionar para a página de login
+        navigate("/login");
+      } else {
+        console.error("Error fetching books:", error);
+        alert("Ocorreu um erro ao excluir o livro.");
+        setLoading(false);
+      }
     }
   };
 
@@ -154,10 +167,11 @@ const Card: React.FC<CardProps> = ({
       const formData = new FormData();
       formData.append("image", file);
 
-      const response = await api.post("/upload", formData, {
+      const response = await axiosInstance.post("/upload", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
+        
       });
 
       const imageUrl = response.data.imageUrl;

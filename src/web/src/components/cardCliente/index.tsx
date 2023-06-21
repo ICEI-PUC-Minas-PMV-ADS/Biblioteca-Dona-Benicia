@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { FiX } from "react-icons/fi";
 import Modal from "react-modal";
+import axiosInstance from "../../axios";
 import "./style.css";
-
+import { useNavigate } from 'react-router-dom';
+import { userId } from '../../jwt';
 
 type CardProps = {
   _id: string;
@@ -24,6 +26,8 @@ const Card: React.FC<CardProps> = ({
   editora,
 }) => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  const navigate = useNavigate();
+
 
   const openModal = () => {
     setModalIsOpen(true);
@@ -32,6 +36,30 @@ const Card: React.FC<CardProps> = ({
   const closeModal = () => {
     setModalIsOpen(false);
   };
+
+  const reservarLivro = async () => {
+    try {
+      await axiosInstance.post(`/usuarios/${userId()}/emprestimos/${_id}`);
+            // Lógica adicional após a reserva do livro, se necessário
+      console.log("Livro reservado com sucesso!");
+    }  catch (error: any) {
+      if (error.response && error.response.status === 401) {
+        // Redirecionar para a página de login
+        navigate("/login");
+      } else {
+        console.error("Error fetching books:", error);
+      }
+    }
+  };
+
+  /*<div className="button-group">
+          <button
+            className="bg-customGreen text-white py-2 px-4 rounded-md"
+            onClick={reservarLivro}
+          >
+            Reservar
+          </button>
+        </div>*/
 
   return (
     <div className="card">
@@ -76,16 +104,7 @@ const Card: React.FC<CardProps> = ({
           </div>
         </div>
 
-        <div className="button-group">
-          <button
-            className="bg-customGreen text-white py-2 px-4 rounded-md"
-            onClick={() => {
-              // Lógica de reserva do livro aqui
-            }}
-          >
-            Reservar
-          </button>
-        </div>
+        
       </Modal>
     </div>
   );
