@@ -18,6 +18,9 @@ https://github.com/ICEI-PUC-Minas-PMV-ADS/Biblioteca-Dona-Benicia/blob/develop/s
 
 ## Consulta ao Acervo - Perfil Cliente
 
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/Biblioteca-Dona-Benicia/assets/81052476/b99520ac-51dd-46e3-9759-de9ae4bad729)
+
+
 
 > **Links Úteis**:
 > - [Ferramentas de Test para Java Script](https://geekflare.com/javascript-unit-testing/)
