@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import backgroundImage from "../../assets/livraria.png";
-import "./style.css";
 import api from "../../services/ApiLivros";
 import { useNavigate } from 'react-router-dom';
 
@@ -38,7 +37,7 @@ const Person: React.FC = () => {
         senha,
         username, // Inclua o campo "username" no objeto de dados do usuário
       };
-      const response = await api.post("/usuarios", usuarioData);
+      const response = await api.post("/", usuarioData);
       console.log("Usuário cadastrado com sucesso!");
       console.log(response.data);
       limparInputs();

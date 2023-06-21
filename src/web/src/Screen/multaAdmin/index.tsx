@@ -1,29 +1,34 @@
-import { useState, useEffect} from "react";
-import Header from "../header";
-import Footer from "../footer";
+import { useState } from "react";
+import Header from "../../components/header";
+import Footer from "../../components/footer";
+import api from "../../services/ApiLivros";
 import { FaSpinner } from "react-icons/fa";
-import axiosInstance from "../../axios";
-import { useNavigate } from 'react-router-dom';
+import {
+  Accordion,
+  AccordionItem,
+  AccordionItemHeading,
+  AccordionItemButton,
+  AccordionItemPanel,
+} from "react-accessible-accordion";
+import { FiSearch, FiChevronDown, FiLoader } from "react-icons/fi";
 
 
 
-const MyForm: React.FC = () => {
+
+const Multa: React.FC = () => {
   const [titulo, setTitle] = useState("");
   const [autor, setAuthor] = useState("");
   const [edicao, setEdition] = useState("");
   const [localPublicacao, setPublicationLocation] = useState("");
   const [editora, setPublisher] = useState("");
   const [img, setImg] = useState<File | null>(null);
-  const [isLoading, setLoading] = useState(false); 
-  const navigate = useNavigate();
-
-
+  const [isLoading, setLoading] = useState(false); // Estado de carregamento
 
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
       setImg(file);
-    } 
+    }
   };
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -39,23 +44,14 @@ const MyForm: React.FC = () => {
         editora,
         img,
       };
-      const livroResponse = await axiosInstance.post("/livros", livroData);
+      const livroResponse = await api.post("/livros", livroData);
 
       const item_id = livroResponse.data._id;
 
       if (img && item_id) {
-        try{
         const formData = new FormData();
         formData.append("file", img);
-        await axiosInstance.post(`/livros/imagens/${item_id}`, formData);
-      } catch (error: any) {
-        if (error.response && error.response.status === 401) {
-          // Redirecionar para a página de login
-          navigate("/login");
-        } else {
-          console.error("Error fetching books:", error);
-        }
-      }
+        await api.post(`/livros/imagens/${item_id}`, formData);
       }
 
       setLoading(false); // Desativa o estado de carregamento
@@ -81,11 +77,9 @@ const MyForm: React.FC = () => {
       <div className="flex flex-col min-h-screen">
         <Header />
         <main className="flex-grow">
-          <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-            <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
-              Inclusão de Obra
-            </h2>
-          </div>
+        <div className="bg-customGre font-bold text-customGreen p-4 my-4">
+          <p className="text-center">Emissão de Multa</p>
+        </div>
           <div className="flex min-h-full flex-1 flex-col justify-center p-4 py-12 lg:px-8 ">
             <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm bg-customGreen p-4 rounded ">
               <form
@@ -149,72 +143,59 @@ const MyForm: React.FC = () => {
                       />
                     </div>
                   </div>
-  
-                  <div>
-                    <label
-                      htmlFor="email"
-                      className="block text-sm font-medium leading-6 text-white"
-                    >
-                      LOCAL DE PUBLICAÇÃO:
-                    </label>
-                    <div className="mt-2">
-                      <input
-                        id="localPublicacao"
-                        type="text"
-                        value={localPublicacao}
-                        onChange={(e) => setPublicationLocation(e.target.value)}
-                        required
-                        className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                      />
-                    </div>
-                  </div>
-  
-                  <div>
-                    <label
-                      htmlFor="email"
-                      className="block text-sm font-medium leading-6 text-white"
-                    >
-                      EDITORA:
-                    </label>
-                    <div className="mt-2">
-                      <input
-                        id="editora"
-                        type="text"
-                        value={editora}
-                        onChange={(e) => setPublisher(e.target.value)}
-                        required
-                        className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                      />
-                    </div>
-                  </div>
-  
-                  <label
-                    htmlFor="email"
-                    className="block text-sm font-medium leading-6 text-white"
-                  >
-                    INCLUSÃO DE IMAGEM:
-                  </label>
-  
-                  <div className=" flex flex-col items-center justify-center ">
-                    {img ? (
-                      <img
-                        src={URL.createObjectURL(img)}
-                        alt="Selected"
-                        className="max-w-full h-auto"
-                      />
-                    ) : (
-                      <div className="bg-gray-200 w-full h-96 flex items-center justify-center">
-                        <span className="text-gray-400">Select an image</span>
-                    </div>
-                  )}
-                  <input
-                    type="file"
-                    accept="image/*"
-                    onChange={handleImageChange}
-                    className="mt-4"
-                  />
-                </div>
                 <div>
+                <Accordion allowZeroExpanded>
+            <AccordionItem>
+              <AccordionItemHeading>
+                <AccordionItemButton className="p-2 mb-4 border text-gray-900 bg-white border-gray-300 rounded-md mb-">
+                  <div className="flex items-center justify-between w-full">
+                    <label
+                      htmlFor="filter"
+                      className="block text-sm font-medium leading-6 text-gray-900"
+                    >
+                      Buscar por:
+                    </label>
+                    <FiChevronDown />
+                  </div>
+                </AccordionItemButton>
+              </AccordionItemHeading>
+              <AccordionItemPanel>
+                <div className="p-2 border bg-customGreen border-gray-300 rounded-md mb-4">
+                  <div className="flex items-center space-x-2">
+                    <input
+                      type="radio"
+                      id="Emprestimo"
+                      name="filter"
+                      value="Emprestimo"
+                      
+                    />
+                    <label htmlFor="livro">Emprestimo</label>
+                  </div>
+
+                  <div className="flex items-center space-x-2">
+                    <input
+                      type="radio"
+                      id="renovao"
+                      name="filter"
+                      value="titulo"
+                     
+                    />
+                    <label htmlFor="titulo">Renovação</label>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <input
+                      type="radio"
+                      id="autor"
+                      name="filter"
+                      value="autor"
+                     
+                    />
+                    <label htmlFor="autor">Devolução</label>
+                  </div>
+                </div>
+              </AccordionItemPanel>
+            </AccordionItem>
+          </Accordion>
                   <button
                     type="submit"
                     className={`flex w-full justify-center rounded-md bg-customGre px-3 py-1.5 text-sm font-semibold leading-6 text-[rgba(25,28,63,1)] shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 ${
@@ -239,4 +220,4 @@ const MyForm: React.FC = () => {
   );
 };
 
-export default MyForm;
+export default Multa;

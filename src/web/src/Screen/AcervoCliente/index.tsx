@@ -10,9 +10,10 @@ import {
 import "react-accessible-accordion/dist/fancy-example.css";
 import Header from "../../components/header";
 import Footer from "../../components/footer";
-import Card from "../../components/card";
+import Card from "../../components/cardCliente";
 import axiosInstance from "../../axios";
 import { useNavigate } from 'react-router-dom';
+
 
 interface Book {
   _id: string;
@@ -24,18 +25,14 @@ interface Book {
   editora: string;
 }
 
-const ConsultaAcervo: React.FC = () => {
+const AcervoCliente: React.FC = () => {
   const [books, setBooks] = useState<Book[]>([]);
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [filteredBooks, setFilteredBooks] = useState<Book[]>([]);
-  const [selectedBook, setSelectedBook] = useState<Book | null>(null);
   const [selectedFilter, setSelectedFilter] = useState<string>("titulo");
   const [showResults, setShowResults] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [isEditModalOpen, setEditModalOpen] = useState(false);
-  const [selectedBookForEdit, setSelectedBookForEdit] = useState<Book | null>(null);
   const navigate = useNavigate();
-
   useEffect(() => {
     fetchBooks();
   }, []);
@@ -43,20 +40,22 @@ const ConsultaAcervo: React.FC = () => {
   const fetchBooks = async () => {
     try {
       const response = await axiosInstance.get("/livros");
+
       setBooks(response.data);
     } catch (error: any) {
       if (error.response && error.response.status === 401) {
+        // Redirecionar para a página de login
         navigate("/login");
       } else {
         console.error("Error fetching books:", error);
       }
     }
   };
-
   const handleSearch = async () => {
     let filtered: Book[] = [];
-    const mensagemElement = document.getElementById("mensagem");
-    if (mensagemElement) {
+    const mensagemElement: HTMLElement | null =
+      document.getElementById("mensagem");
+    if (mensagemElement instanceof HTMLElement) {
       mensagemElement.innerHTML = ""; // Clear the message
     }
 
@@ -102,32 +101,16 @@ const ConsultaAcervo: React.FC = () => {
   };
 
   const handleInputClick = () => {
-    const mensagemElement = document.getElementById("mensagem");
-    if (mensagemElement) {
+    const mensagemElement: HTMLElement | null =
+      document.getElementById("mensagem");
+    if (mensagemElement instanceof HTMLElement) {
       mensagemElement.innerHTML = ""; // Clear the message
-    }
-  };
-
-  const handleTitleClick = (book: Book) => {
-    setSelectedBook(book);
-  };
-
-  const handleImageClick = (bookId: string) => {
-    console.log("Open PDF of book with ID:", bookId);
-  };
-
-  const handleEditarClick = (bookId: string) => {
-    const book = books.find((book) => book._id === bookId);
-    if (book) {
-      setSelectedBookForEdit(book);
-      setEditModalOpen(true);
     }
   };
 
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-
       <main className="px-2 flex-grow">
         <div className="w-full p-2 mx-auto border bg-customGreen border-gray-300 rounded-md">
           <label
@@ -139,19 +122,15 @@ const ConsultaAcervo: React.FC = () => {
           <div className="relative">
             <input
               type="text"
-              id="searchTerm"
+              placeholder="Search..."
               value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
               onClick={handleInputClick}
-              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                setSearchTerm(e.target.value)
-              }
-              placeholder={`Pesquisar por ${selectedFilter}`}
               className="p-2 pl-10 border-none outline-none w-full bg-input text-gray-500 rounded-md"
             />
             <FiSearch className="absolute top-2 left-3 text-texto" />
           </div>
         </div>
-
         <Accordion allowZeroExpanded>
           <AccordionItem>
             <AccordionItemHeading>
@@ -220,33 +199,39 @@ const ConsultaAcervo: React.FC = () => {
             Buscar
           </button>
         </div>
-        <div id="mensagem" className="text-center text-texto mb-4"></div>
-
-<div className="flex flex-wrap justify-center bg-white mx-4 rounded-md">
-  {books.map((book: Book, index: number) => (
-    <div
-      key={book._id}
-      className="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 xl:w-1/4 mb-4"
-    >
-      <Card
-        _id={book._id}
-        titulo={book.titulo}
-        img={book.img}
-        autor={book.autor}
-        edicao={book.edicao}
-        localPublicacao={book.localPublicacao}
-        editora={book.editora}
-        onClick={() => handleImageClick(book._id)}
-      />
+        {showResults ? (
+          <div className="flex flex-wrap justify-center bg-white mx-4 rounded-md">
+            {filteredBooks.length > 0 ? (
+              <>
+                {filteredBooks.map((book) => (
+                  <div
+                    key={book._id}
+                    className="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 xl:w-1/4 mb-4"
+                  >
+                    <h3>{book.titulo}</h3>
+                    <Card
+                      _id={book._id}
+                      titulo={book.titulo}
+                      img={book.img}
+                      autor={book.autor}
+                      edicao={book.edicao}
+                      localPublicacao={book.localPublicacao}
+                      editora={book.editora}
+                    />
+                  </div>
+                ))}
+              </>
+            ) : (
+              <div className="text-gray-500">
+                <h1>No results found.</h1>
+              </div>
+            )}
+          </div>
+        ) : null}
+      </main>
+      <Footer />
     </div>
-  ))}
-</div>
-</main>
-<div className="mt-auto">
-<Footer />
-</div>
-</div>
-);
+  );
 };
 
-export default ConsultaAcervo;
+export default AcervoCliente;

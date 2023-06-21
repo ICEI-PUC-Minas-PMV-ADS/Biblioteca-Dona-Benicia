@@ -1,7 +1,9 @@
 from app.dto.livros import POSTLivroDTO, PUTLivroDTO, GETLivroDTO, DELETELivroDTO
 from app.controller import livros as controller_livros
-from fastapi import APIRouter, File, HTTPException, UploadFile
+from fastapi import APIRouter, File, HTTPException, UploadFile, Depends
 from typing import List
+from app.dto.usuarios import GETUsuarioDTO
+from app.view.login import get_current_user
 
 router = APIRouter()
 
@@ -11,7 +13,7 @@ router = APIRouter()
 
 @router.get('/livros', response_description="lista de livros",
             response_model=List[GETLivroDTO], tags=["livros"])
-async def obter_livros():
+async def obter_livros(current_user: GETUsuarioDTO = Depends(get_current_user)):
     try:
         return controller_livros.obter_livros()
     except Exception as e:
@@ -24,7 +26,7 @@ async def obter_livros():
 
 @router.get('/livros/{id}', response_description="livro buscado",
             response_model=GETLivroDTO, tags=["livros"])
-async def obter_livro_por_id(id: str) -> GETLivroDTO:
+async def obter_livro_por_id(id: str, current_user: GETUsuarioDTO = Depends(get_current_user)) -> GETLivroDTO:
     try:
         return controller_livros.obter_livro_por_id(id)
     except FileNotFoundError:
@@ -34,7 +36,7 @@ async def obter_livro_por_id(id: str) -> GETLivroDTO:
 # Editar
 @router.put('/livros/{id}', response_description="livro atualizado",
             response_model=GETLivroDTO, tags=["livros"])
-async def editar_livro_por_id(id: str, livro_alterado: PUTLivroDTO):
+async def editar_livro_por_id(id: str, livro_alterado: PUTLivroDTO, current_user: GETUsuarioDTO = Depends(get_current_user)):
     try:
         return controller_livros.editar_livro_por_id(id, livro_alterado)
     except FileNotFoundError:
@@ -48,7 +50,7 @@ async def editar_livro_por_id(id: str, livro_alterado: PUTLivroDTO):
 
 @router.post('/livros', response_description="livro inserido",
              response_model=GETLivroDTO, tags=["livros"])
-async def incluir_novo_livro(livro: POSTLivroDTO) -> GETLivroDTO:
+async def incluir_novo_livro(livro: POSTLivroDTO, current_user: GETUsuarioDTO = Depends(get_current_user)) -> GETLivroDTO:
     try:
         return controller_livros.incluir_novo_livro(livro)
     except:
@@ -57,7 +59,7 @@ async def incluir_novo_livro(livro: POSTLivroDTO) -> GETLivroDTO:
 
 
 @router.post("/livros/imagens/{item_id}", tags=["livros"])
-async def create_upload_file(item_id: str, file: UploadFile):
+async def create_upload_file(item_id: str, file: UploadFile, current_user: GETUsuarioDTO = Depends(get_current_user)):
     print("entrou aqui")
     try:
         return controller_livros.uploadimg_livro(item_id, file)
@@ -67,7 +69,7 @@ async def create_upload_file(item_id: str, file: UploadFile):
             status_code=500, detail="Erro interno ao fazer upload da imagem")
 
 @router.post("/livros/pdfs/{item_id}", tags=["livros"])
-async def create_upload_pdf(item_id: str, file: UploadFile):
+async def create_upload_pdf(item_id: str, file: UploadFile, current_user: GETUsuarioDTO = Depends(get_current_user)):
     print("entrou aqui pdf")
     try:
         return controller_livros.uploadimg_pdf(item_id, file)
@@ -80,7 +82,7 @@ async def create_upload_pdf(item_id: str, file: UploadFile):
 # Excluir
 @router.delete('/livros/{id}', response_description="livro deletado",
                response_model=DELETELivroDTO, tags=["livros"])
-async def excluir_livro(id: str):
+async def excluir_livro(id: str, current_user: GETUsuarioDTO = Depends(get_current_user)):
     try:
         return controller_livros.excluir_livro(id)
     except FileNotFoundError:

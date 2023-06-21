@@ -2,71 +2,46 @@ import { FaPlus, FaSearch, FaFileAlt, FaMoneyBill } from "react-icons/fa";
 import { BsPersonPlusFill } from "react-icons/bs";
 import { RiLock2Line } from "react-icons/ri";
 import { Link } from "react-router-dom";
-import Footer from "../../components/footer";
-import { adminUser } from "../../jwt"
+import Footer from "../../components/footer/index";
+import Avatar from "../../components/avatar/index";
 
 const people = [
+ 
   {
-    id:"1",
-    name: "Inclusão de obra catalogação",
-    role: <FaPlus className="text-white text-2xl" />,
-    path: "/livro",
-  },
-  {
-    id:"2",
     name: "Consulta ao Acervo",
     role: <FaSearch className="text-white text-2xl" />,
-    path: "/ConsultaAcervo",
+    path: "/AcervoCliente",
   },
   {
-    id:"3",
-    name: "Registro empréstimo / devolução",
+    name: "Minhas Reservas",
+    email: "dries.vincent@example.com",
     role: <FaFileAlt className="text-white text-2xl" />,
-    path: "/EmprestimoAdmin",
+    path: "/Reservas",
   },
-  {
-    id:"4",
-    name: "Emissão de multa",
-    role: <FaMoneyBill className="text-white text-2xl" />,
-    path: "/Multa",
-  },
-  {
-    id:"5",
-    name: "Cadastro de usuário",
-    role: <BsPersonPlusFill className="text-white text-2xl" />,
-    path: "login",
-  },
-  {
-    id:"6",
-    name: "Bloqueio e desbloqueio de usuário",
-    role: <RiLock2Line className="text-white text-2xl" />,
-    path: "",
-  },
+  
+  
 ];
 
-export default function Home() {
-
- 
-  if(adminUser()){
+export default function ConsultaCliente() {
   return (
     <div className="flex flex-col min-h-screen">
       <header className="bg-customGre">
         <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
           <div className="flex lg:flex-1">
             <a href="#" className="-m-1.5 p-1.5">
-              {/* Conteúdo do link */}
+            
             </a>
           </div>
         </nav>
         <div className="bg-customGre font-bold text-customGreen p-4 my-4">
-          <p className="text-center">Bem-vindo, administrador.</p>
+          <p className="text-center">Bem-vindo fique à vontade para consulta nossas obrar e gerenciar sua reserva.</p>
         </div>
       </header>
       <main className="flex-grow bg-customGre">
         <ul className="divide-y divide-gray-100 p-4">
-          {people.map((person, index) => ( // Adicionando o parâmetro "index" para gerar uma chave única
+          {people.map((person) => (
             <Link
-              key={person.id} // Usando o índice como chave única
+              key={person.email}
               to={person.path}
               className="group flex items-center py-4 bg-customGreen hover:bg-gray-500 text-white font-bold py-2 px-4 rounded cursor-pointer mb-4"
             >
@@ -85,11 +60,4 @@ export default function Home() {
       </div>
     </div>
   );
-  }else{
-    return (
-      <div className="bg-customGre font-bold text-customGreen p-4 my-4">
-      <p>AREA RESTRITA</p>
-      </div>
-    );
-  }
 }

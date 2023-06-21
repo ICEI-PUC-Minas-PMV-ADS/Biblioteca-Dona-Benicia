@@ -20,6 +20,7 @@ class PyObjectId(ObjectId):
 class POSTUsuarioDTO(BaseModel):
     nome: str
     sobrenome: str
+    username: str
     email: str
     senha: str
     class Config:
@@ -29,6 +30,7 @@ class POSTUsuarioDTO(BaseModel):
             "example": {
                 "nome": "Ana Carolina",
                 "sobrenome": "Fernades",
+                "username": "aninha",
                 "email": "teste@gmail.com",
                 "senha": "********"
             }
@@ -56,8 +58,8 @@ class GETUsuarioDTO(BaseModel):
     id: PyObjectId = Field(default_factory=PyObjectId, alias="_id" )
     nome: str
     sobrenome: str
+    username: str
     email: str
-    senha: str
     class Config:
         allow_population_by_field_name = True
         arbitrary_types_allowed = True
@@ -67,8 +69,8 @@ class GETUsuarioDTO(BaseModel):
                 "id": "542c2b97bac0595474108b48",
                 "nome": "Ana Carolina",
                 "sobrenome": "Fernades",
-                "email": "teste@gmail.com",
-                "senha": "********"
+                "username": "aninha",
+                "email": "teste@gmail.com"
             }
         }
 
@@ -79,6 +81,6 @@ class DELETEUsuarioDTO(BaseModel):
         arbitrary_types_allowed = True
         schema_extra = {
             "example": {
-                "message": "usaruario excluido"
+                "message": "usuario excluido"
             }
         }
