@@ -1,4 +1,4 @@
-# Introdução
+# Introdução 	:blue_book:
 
 O projeto faz parte do Desenvolvimento de um Sistema Sociotécnico Inovador e se propõe a desenvolver um sistema de apoio à gestão da Biblioteca Dona Benícia da Escola Estadual Ari da Franca. O desenvolvimento desse software baseia-se na descrição previamente fornecida que segue. 
 
