@@ -47,7 +47,7 @@ Senndo assim, o time está organizado da seguinte maneira:
 * Equipe de Desenvolvimento
   - Daiane Aparecida Rocha Cardoso
   - Luiza Jamarino Rosa Grigorio
-  -	platini Gomes da Rocha
+  -	Platini Gomes da Rocha
   -	Priscilha Sansão Alves
 
 
