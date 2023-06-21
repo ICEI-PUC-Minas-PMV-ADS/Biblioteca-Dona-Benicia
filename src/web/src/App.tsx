@@ -50,9 +50,14 @@ function App() {
           <Route path="/person" element={<Person />} />
           <Route path="/Cadastro" element={<Cadastro />} />
 
+
           <Route
             path="/Home"
             element={<PrivateRoute component={Home} path="/Home" />}
+          />
+          <Route
+            path="/EmprestimoAdmin"
+            element={<PrivateRoute component={Home} path="/admin/EmprestimoAdmin" />}
           />
           <Route
             path="/Reservas"
