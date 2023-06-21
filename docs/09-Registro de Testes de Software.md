@@ -24,10 +24,13 @@ https://github.com/ICEI-PUC-Minas-PMV-ADS/Biblioteca-Dona-Benicia/blob/develop/s
 
 ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/Biblioteca-Dona-Benicia/assets/81052476/64333cf9-3212-4a88-8399-a886c1893253)
 
-### Pesquisa por nome de Autor
+### Pesquisa por nome do Autor
 
 ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/Biblioteca-Dona-Benicia/assets/81052476/628e3ab3-374f-40f5-b534-74e331b00aae)
 
+### Mensagem de retorno quando não encontra o termo na pesquisa
+
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/Biblioteca-Dona-Benicia/assets/81052476/7aa6a41e-de77-443b-8aac-b11f320153f6)
 
 > **Links Úteis**:
 > - [Ferramentas de Test para Java Script](https://geekflare.com/javascript-unit-testing/)
