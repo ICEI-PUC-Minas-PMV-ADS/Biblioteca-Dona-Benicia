@@ -1,4 +1,4 @@
-# Biblioteca Dona Benícia :books:
+ #  Biblioteca Dona Benícia :books:
 
 `ANÁLISE E DESENVOLVIMENTO DE SISTEMAS`
 
@@ -6,7 +6,7 @@
 
 `Eixo 5`
 
-Desenvolvimento de uma Aplicação web onde será possível realizar o empréstimo de livros. Tal sistema tem por finalidade controlar entrada e saída de acervos, controle de usuários e emissão de relatórios gerenciais.
+Desenvolvimento de uma Aplicação Web onde será possível realizar o empréstimo de livros. Tal sistema tem por finalidade controlar entrada e saída de acervos, controle de usuários e emissão de relatórios gerenciais.
 O sistema deve facilitar o gerenciamento da biblioteca, tornando os processos mais ágeis e eficazes, trazendo benefícios para os alunos e para a escola.
 
 ## Integrantes
