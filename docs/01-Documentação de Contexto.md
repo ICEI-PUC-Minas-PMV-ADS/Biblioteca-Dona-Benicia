@@ -1,4 +1,4 @@
-# Introdução
+# Introdução 	
 
 O projeto faz parte do Desenvolvimento de um Sistema Sociotécnico Inovador e se propõe a desenvolver um sistema de apoio à gestão da Biblioteca Dona Benícia da Escola Estadual Ari da Franca. O desenvolvimento desse software baseia-se na descrição previamente fornecida que segue. 
 
@@ -16,11 +16,11 @@ Na seção seguinte, está definido o cronograma com as atividades para desenvol
 
 Nas seções subsequentes, são apresentados os seguintes documentos: 
 
-Um documento de especificação de requisitos, incluindo: Diagramas de Casos de Uso e Descrição dos Cenários de Casos de Uso. 
+* Um documento de especificação de requisitos, incluindo: Diagramas de Casos de Uso e Descrição dos Cenários de Casos de Uso. 
 
-Um documento de projeto arquitetural, incluindo um Diagrama de Componentes. 
+* Um documento de projeto arquitetural, incluindo um Diagrama de Componentes. 
 
-Um documento de projeto detalhado, incluindo: Diagrama de Classes, Diagrama de Sequência, Diagrama de Comunicação e Diagrama de Atividades, todos eles diagramas definidos na UML. 
+* Um documento de projeto detalhado, incluindo: Diagrama de Classes, Diagrama de Sequência, Diagrama de Comunicação e Diagrama de Atividades, todos eles diagramas definidos na UML. 
  
 
 ## Cronograma
@@ -273,7 +273,7 @@ Fluxo normal:
 3. Preencher as informações sobre como se deu a perda.
 4. Caso de Uso “Gerenciar perdas de obras”.
 Pós-condição:
-Um aviso na tela é exibido, notificando o usuário quanto ao prazo para substituição
+É exibido um aviso, notificando o usuário quanto ao prazo para substituição
 da obra.
 
 <img width="949" alt="Diagrama de Casos de Uso" src="https://github.com/ICEI-PUC-Minas-PMV-ADS/Biblioteca-Dona-Benicia/blob/main/docs/img/Diagramadecasosdeuso1.png">

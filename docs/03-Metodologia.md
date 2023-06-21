@@ -47,7 +47,7 @@ Senndo assim, o time está organizado da seguinte maneira:
 * Equipe de Desenvolvimento
   - Daiane Aparecida Rocha Cardoso
   - Luiza Jamarino Rosa Grigorio
-  -	platini Gomes da Rocha
+  -	Platini Gomes da Rocha
   -	Priscilha Sansão Alves
 
 
@@ -60,7 +60,8 @@ Para organização e distribuição das tarefas do projeto, a equipe está utili
 * **doing**: representa as tarefas que estão em execução naquele momento; 
 * **Done**: nesta lista são colocadas as tarefas que passaram pelos testes e controle de qualidade e estão prontos para ser entregues ao usuário. Não há mais edições ou revisões necessárias, ele está agendado e pronto para a ação.  
 
-Foi escolhido o quadro de kanban para o gerenciamento do projeto, com o sistema kanban é possível avaliar o progresso do trabalho da equipe, avaliar etapas posteriores, medir o tempo gasto em tarefas especificas e também promover a cooperação entre a equipe, tudo isso utilizando um sistema simples e visual. 
+Foi escolhido o quadro de Kanban para o gerenciamento do projeto, com o sistema kanban é possível avaliar o progresso do trabalho da equipe, avaliar etapas posteriores, medir o tempo gasto em tarefas especificas e também promover a cooperação entre a equipe, tudo isso utilizando um sistema simples e visual. 
+
   <img width="949" alt="Kanban" src="https://user-images.githubusercontent.com/61097764/226148762-65b193dc-689e-4a0a-952c-f51fe3f8e8bd.png">
 
 
@@ -73,6 +74,6 @@ As ferramentas empregadas no projeto são:
 -  Editor de código: Visual Studio.
 - Ferramentas de comunicação: Microsoft Teams
 - Ferramentas para criação de diagramas: brModelo, StarUML, LucidApp 
-- Ferramentas de desenho de tela (_wireframing_): figma
+- Ferramentas de desenho de tela (_wireframing_): Figma
 
 
