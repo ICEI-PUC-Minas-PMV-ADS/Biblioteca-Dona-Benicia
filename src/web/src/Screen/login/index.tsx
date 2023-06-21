@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import backgroundImage from '../../assets/livraria.png';
 import {saveToken} from '../../jwt'
+import axiosInstance from '../../axios';
 
 const Login: React.FC = () => {
   const navigate = useNavigate();
@@ -11,27 +12,25 @@ const Login: React.FC = () => {
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-
+  
     const requestBody = new URLSearchParams();
     requestBody.append('grant_type', 'password');
     requestBody.append('username', username);
     requestBody.append('password', password);
-
+  
     try {
-      const response = await fetch('https://donabenicia-dev.azurewebsites.net/token', {
-        method: 'POST',
+      const response = await axiosInstance.post('/token', requestBody.toString(), {
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
         },
-        body: requestBody.toString(),
       });
-
-      if (response.ok) {
+  
+      if (response.status >= 200 && response.status < 300) {
         // Login bem-sucedido, redirecionar para a página inicial
-        const data = await response.json();
-        saveToken(data.access_token)
+        const data = response.data;
+        saveToken(data.access_token);
         console.log(data);
-
+  
         navigate('/Cliente'); // Redireciona para a rota '/home'
       } else {
         // Login falhou, trate o erro apropriadamente

@@ -3,6 +3,7 @@ import { BsPersonPlusFill } from "react-icons/bs";
 import { RiLock2Line } from "react-icons/ri";
 import { Link } from "react-router-dom";
 import Footer from "../../components/footer";
+import { adminUser } from "../../jwt"
 
 const people = [
   {
@@ -44,6 +45,9 @@ const people = [
 ];
 
 export default function Home() {
+
+ 
+  if(adminUser()){
   return (
     <div className="flex flex-col min-h-screen">
       <header className="bg-customGre">
@@ -81,4 +85,11 @@ export default function Home() {
       </div>
     </div>
   );
+  }else{
+    return (
+      <div className="bg-customGre font-bold text-customGreen p-4 my-4">
+      <p>AREA RESTRITA</p>
+      </div>
+    );
+  }
 }

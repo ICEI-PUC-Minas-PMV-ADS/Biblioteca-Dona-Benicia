@@ -1,5 +1,9 @@
 import jwtDecode, { JwtPayload } from 'jwt-decode';
 
+interface CustomJWTtoken extends JwtPayload {
+  role: string
+}
+
 export const saveToken = (token: string): void => {
   localStorage.setItem('token', token);
 };
@@ -23,6 +27,15 @@ export const userId = (): string | undefined  => {
     return decoded.sub;
   }
   return undefined;
+}
+
+export const adminUser = (): boolean  => {
+  const token = getToken();
+  if (token) {
+    const decoded = jwtDecode<CustomJWTtoken>(token);
+    return decoded.role === "admin";
+  }
+  return false;
 }
 
 export const isTokenExpired = (): boolean => {

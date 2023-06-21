@@ -1,223 +1,221 @@
-import { useState } from "react";
+import React, { useEffect, useState } from 'react';
+import TextField from '@mui/material/TextField';
+import Autocomplete from '@mui/material/Autocomplete';
+import axiosInstance from "../../axios";
 import Header from "../../components/header";
-import Footer from "../../components/footer";
-import api from "../../services/ApiLivros";
-import { FaSpinner } from "react-icons/fa";
-import {
-  Accordion,
-  AccordionItem,
-  AccordionItemHeading,
-  AccordionItemButton,
-  AccordionItemPanel,
-} from "react-accessible-accordion";
-import { FiSearch, FiChevronDown, FiLoader } from "react-icons/fi";
+import MenuItem from '@mui/material/MenuItem';
+import { adminUser } from "../../jwt"
+import { useNavigate } from 'react-router-dom';
 
+interface FilmOption {
+  _id: string;
+  nome: string;
+  sobrenome: string;
+  username: string;
+  email: string;
+}
 
+interface BookOption {
+  _id: string;
+  titulo: string;
+  autor: string;
+  edicao: string;
+  localPublicacao: string;
+  editora: string;
+  img: string;
+  pdf: string;
+  emprestado?: boolean; // Adicione esta propriedade como opcional
+  emprestimoId?: string; // Add this property for the loan ID
+}
 
+enum ActionType {
+  LOAN = "loan",
+  RETURN = "return",
+}
 
-const EmprestimoAdmin: React.FC = () => {
-  const [titulo, setTitle] = useState("");
-  const [autor, setAuthor] = useState("");
-  const [edicao, setEdition] = useState("");
-  const [localPublicacao, setPublicationLocation] = useState("");
-  const [editora, setPublisher] = useState("");
-  const [img, setImg] = useState<File | null>(null);
-  const [isLoading, setLoading] = useState(false); // Estado de carregamento
+export default function ComboBox() {
+  const [filmOptions, setFilmOptions] = useState<FilmOption[]>([]);
+  const [bookOptions, setBookOptions] = useState<BookOption[]>([]);
+  const [selectedFilm, setSelectedFilm] = useState<FilmOption | null>(null);
+  const [selectedBook, setSelectedBook] = useState<BookOption | null>(null);
+  const [loanStatus, setLoanStatus] = useState<string>('');
+  const [actionType, setActionType] = useState<ActionType | null>(null);
+  const navigate = useNavigate();
 
-  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (file) {
-      setImg(file);
-    }
-  };
+  useEffect(() => {
+    fetchFilmOptions();
+    fetchBookOptions();
+  }, []);
 
-  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    setLoading(true); // Ativa o estado de carregamento
-
+  const fetchFilmOptions = async (): Promise<void> => {
     try {
-      const livroData = {
-        titulo,
-        autor,
-        edicao,
-        localPublicacao,
-        editora,
-        img,
-      };
-      const livroResponse = await api.post("/livros", livroData);
-
-      const item_id = livroResponse.data._id;
-
-      if (img && item_id) {
-        const formData = new FormData();
-        formData.append("file", img);
-        await api.post(`/livros/imagens/${item_id}`, formData);
-      }
-
-      setLoading(false); // Desativa o estado de carregamento
-      alert("Novo livro inserido");
-
-      // Limpa os campos de entrada após o envio do formulário
-      setTitle("");
-      setAuthor("");
-      setEdition("");
-      setPublicationLocation("");
-      setPublisher("");
-      setImg(null);
+      const response = await axiosInstance.get('/usuarios');
+      const data: FilmOption[] = response.data;
+      setFilmOptions(data);
     } catch (error) {
-      console.error(error);
-      alert("Ocorreu um erro ao enviar os dados.");
-      setLoading(false); // Desativa o estado de carregamento em caso de erro
+      console.error('Error fetching film options:', error);
     }
   };
 
+  const fetchBookOptions = async (): Promise<void> => {
+    try {
+      const response = await axiosInstance.get('/livros');
+      const data: BookOption[] = response.data;
+      setBookOptions(data);
+    } catch (error) {
+      console.error('Error fetching book options:', error);
+    }
+  };
 
-  return (
-    <>
+  const handleLoanSubmission = async (): Promise<void> => {
+    if (selectedFilm && selectedBook && actionType) {
+      try {
+        if (actionType === ActionType.LOAN) {
+          // Lógica para realizar o empréstimo
+        } else if (actionType === ActionType.RETURN) {
+          const response = await axiosInstance.delete(`/usuarios/${selectedFilm._id}/emprestimos/${selectedBook.emprestimoId}`);
+          if (response.status === 200) {
+            setLoanStatus('Devolução realizada com sucesso!');
+            // Lógica para remover o livro da lista de empréstimos do usuário
+            const updatedBookOptions = bookOptions.map((book) => {
+              if (book._id === selectedBook._id) {
+                return { ...book, emprestado: false, emprestimoId: undefined };
+              }
+              return book;
+            });
+            setBookOptions(updatedBookOptions);
+            setSelectedFilm(null);
+            setSelectedBook(null);
+            setActionType(null);
+          } else {
+            setLoanStatus('Falha ao realizar a devolução.');
+          }
+        }
+      } catch (error) {
+        console.error('Error submitting loan:', error);
+        setLoanStatus('Falha ao realizar a ação.');
+      }
+    }
+  };
+  
+
+  const handleActionTypeChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
+    const selectedActionType = event.target.value as ActionType;
+    setActionType(selectedActionType);
+  };
+  if (adminUser()){
+    return (
       <div className="flex flex-col min-h-screen">
         <Header />
-        <main className="flex-grow">
-        <div className="bg-customGre font-bold text-customGreen p-4 my-4">
-          <p className="text-center">Registro de Emprestimo, Devolução e Renovação</p>
-        </div>
-          <div className="flex min-h-full flex-1 flex-col justify-center p-4 py-12 lg:px-8 ">
-            <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm bg-customGreen p-4 rounded ">
-              <form
-                onSubmit={handleSubmit}
-                className="space-y-6"
-                action="#"
-                method="POST"
-              >
+        <main className="flex-grow bg-customGre py-10">
+          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-2xl font-bold text-texto mb-6 text-center">Registro de Empréstimo, Devolução e Renovação</h2>
+            <div className="bg-customGreen rounded shadow-md p-6">
+              <div className="space-y-6">
                 <div>
-                  <label
-                    htmlFor="email"
-                    className="block text-sm font-medium leading-6 text-white"
+                  <TextField
+                    select
+                    label="Ação"
+                    value={actionType}
+                    onChange={handleActionTypeChange}
+                    className="bg-input w-full"
                   >
-                    TÍTULO:
-                  </label>
-                  <div className="mt-2">
-                    <input
-                      id="titulo"
-                      type="text"
-                      value={titulo}
-                      onChange={(e) => setTitle(e.target.value)}
-                      className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                      />
-                    </div>
-                  </div>
-  
-                  <div>
-                    <label
-                      htmlFor="email"
-                      className="block text-sm font-medium leading-6 text-white"
-                    >
-                      AUTOR:
-                    </label>
-                    <div className="mt-2">
-                      <input
-                        id="autor"
-                        type="text"
-                        value={autor}
-                        onChange={(e) => setAuthor(e.target.value)}
-                        required
-                        className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                      />
-                    </div>
-                  </div>
-  
-                  <div>
-                    <label
-                      htmlFor="edicao"
-                      className="block text-sm font-medium leading-6 text-white"
-                    >
-                      EDIÇÃO:
-                    </label>
-                    <div className="mt-2">
-                      <input
-                        id="edicao"
-                        type="text"
-                        value={edicao}
-                        onChange={(e) => setEdition(e.target.value)}
-                        required
-                        className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                      />
-                    </div>
-                  </div>
-                <div>
-                <Accordion allowZeroExpanded>
-            <AccordionItem>
-              <AccordionItemHeading>
-                <AccordionItemButton className="p-2 mb-4 border text-gray-900 bg-white border-gray-300 rounded-md mb-">
-                  <div className="flex items-center justify-between w-full">
-                    <label
-                      htmlFor="filter"
-                      className="block text-sm font-medium leading-6 text-gray-900"
-                    >
-                      Buscar por:
-                    </label>
-                    <FiChevronDown />
-                  </div>
-                </AccordionItemButton>
-              </AccordionItemHeading>
-              <AccordionItemPanel>
-                <div className="p-2 border bg-customGreen border-gray-300 rounded-md mb-4">
-                  <div className="flex items-center space-x-2">
-                    <input
-                      type="radio"
-                      id="Emprestimo"
-                      name="filter"
-                      value="Emprestimo"
-                      
-                    />
-                    <label htmlFor="livro">Emprestimo</label>
-                  </div>
+                    <MenuItem value={ActionType.LOAN}>Emprestar</MenuItem>
+                    <MenuItem value={ActionType.RETURN}>Devolver</MenuItem>
+                  </TextField>
+                </div>
 
-                  <div className="flex items-center space-x-2">
-                    <input
-                      type="radio"
-                      id="renovao"
-                      name="filter"
-                      value="titulo"
-                     
+                {actionType === ActionType.LOAN && (
+                  <div>
+                    <Autocomplete
+                      disablePortal
+                      id="combo-box-films"
+                      options={filmOptions}
+                      getOptionLabel={(option) => option.nome}
+                      className="bg-input"
+                      renderInput={(params) => <TextField {...params} label="Usuário" />}
+                      onChange={(event, value) => setSelectedFilm(value)}
                     />
-                    <label htmlFor="titulo">Renovação</label>
                   </div>
-                  <div className="flex items-center space-x-2">
-                    <input
-                      type="radio"
-                      id="autor"
-                      name="filter"
-                      value="autor"
-                     
+                )}
+
+  {actionType === ActionType.RETURN && (
+                  <div>
+                    <Autocomplete
+                      disablePortal
+                      id="combo-box-films"
+                      options={filmOptions}
+                      getOptionLabel={(option) => option.nome}
+                      className="bg-input"
+                      renderInput={(params) => <TextField {...params} label="Usuário" />}
+                      onChange={(event, value) => setSelectedFilm(value)}
                     />
-                    <label htmlFor="autor">Devolução</label>
                   </div>
-                </div>
-              </AccordionItemPanel>
-            </AccordionItem>
-          </Accordion>
-                  <button
-                    type="submit"
-                    className={`flex w-full justify-center rounded-md bg-customGre px-3 py-1.5 text-sm font-semibold leading-6 text-[rgba(25,28,63,1)] shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 ${
-                      isLoading ? "pointer-events-none" : ""
-                    }`}
-                    disabled={isLoading}
-                  >
-                    {isLoading ? (
-                      <FaSpinner className="animate-spin mr-2" />
-                    ) : (
-                      "INCLUIR"
-                    )}
-                  </button>
-                </div>
-              </form>
+                )}
+
+                {actionType === ActionType.LOAN && (
+                  <div>
+                    <Autocomplete
+                      disablePortal
+                      id="combo-box-books"
+                      options={bookOptions}
+                      getOptionLabel={(option) => option.titulo}
+                      className="bg-input"
+                      renderInput={(params) => <TextField {...params} label="Livro" />}
+                      onChange={(event, value) => setSelectedBook(value)}
+                    />
+                  </div>
+                )}
+
+  {actionType === ActionType.RETURN && (
+                  <div>
+                    <Autocomplete
+                      disablePortal
+                      id="combo-box-books"
+                      options={bookOptions}
+                      getOptionLabel={(option) => option.titulo}
+                      className="bg-input"
+                      renderInput={(params) => <TextField {...params} label="Livro" />}
+                      onChange={(event, value) => setSelectedBook(value)}
+                    />
+                  </div>
+                )}
+
+  {actionType === ActionType.RETURN && selectedFilm && selectedBook && (
+    <div>
+      <h3 className="text-lg font-bold text-texto mb-2">Formulário de Exclusão</h3>
+      <p>Você está prestes a excluir o livro "{selectedBook.titulo}" do usuário "{selectedFilm.nome}".</p>
+      <p>Deseja prosseguir com a exclusão?</p>
+      <div className="flex justify-center">
+        <button
+          onClick={handleLoanSubmission} 
+          className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mt-4"
+        >
+          Confirmar Exclusão
+        </button>
+      </div>
+    </div>
+  )}
+
+                {actionType && (
+                  <div className="flex justify-center">
+                    <button
+                      onClick={handleLoanSubmission}
+                      className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                    >
+                      {actionType === ActionType.LOAN ? "Empréstimo" : "Devolução"}
+                    </button>
+                  </div>
+                )}
+
+                {loanStatus && <p className="text-center text-red-500">{loanStatus}</p>}
+              </div>
             </div>
           </div>
         </main>
-        <Footer />
       </div>
-    </>
-  );
-};
-
-export default EmprestimoAdmin;
+    );
+  }else {
+    navigate("/admin/login")
+  }
+}

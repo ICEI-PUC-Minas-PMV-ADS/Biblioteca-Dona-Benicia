@@ -19,7 +19,8 @@ import AcervoCliente from "./Screen/AcervoCliente";
 import Atualizar from "./Screen/atualizarCadastro";
 import Livro from "./Screen/cadastroLivro";
 import ConsultaAcervo from "./Screen/consultaAcervo";
-import Reservas from "./Screen/reservas"
+import Reservas from "./Screen/reservas";
+import Cadastro from "./Screen/usuarioAdmin";
 
 interface PrivateRouteProps {
   path: string;
@@ -44,31 +45,24 @@ function App() {
     <div className="App">
       <Router>
         <Routes>
-          <Route path="/login" element={<Login />} />
+          <Route path="/" element={<Login />} />
           <Route path="/admin/login" element={<LoginAdmin />} />
           <Route path="/person" element={<Person />} />
+          <Route path="/Cadastro" element={<Cadastro />} />
 
           <Route
-            path="/"
-            element={<PrivateRoute component={Home} path="/" />}
+            path="/Home"
+            element={<PrivateRoute component={Home} path="/Home" />}
           />
           <Route
             path="/Reservas"
-            element={<PrivateRoute component={Reservas} path="/" />}
+            element={<PrivateRoute component={Reservas} path="/Reservas" />}
           />
           <Route
             path="/Cliente"
             element={<PrivateRoute component={Cliente} path="/Cliente" />}
           />
-          <Route
-            path="/EmprestimoAdmin"
-            element={
-              <PrivateRoute
-                component={EmprestimoAdmin}
-                path="/EmprestimoAdmin"
-              />
-            }
-          />
+          
           <Route
             path="/Multa"
             element={<PrivateRoute component={Multa} path="/Multa" />}
