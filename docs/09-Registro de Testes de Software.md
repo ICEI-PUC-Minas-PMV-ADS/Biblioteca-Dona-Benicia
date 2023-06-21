@@ -20,6 +20,9 @@ https://github.com/ICEI-PUC-Minas-PMV-ADS/Biblioteca-Dona-Benicia/blob/develop/s
 
 ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/Biblioteca-Dona-Benicia/assets/81052476/b99520ac-51dd-46e3-9759-de9ae4bad729)
 
+Pesquisa por Título da Obra
+
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/Biblioteca-Dona-Benicia/assets/81052476/64333cf9-3212-4a88-8399-a886c1893253)
 
 
 > **Links Úteis**:
