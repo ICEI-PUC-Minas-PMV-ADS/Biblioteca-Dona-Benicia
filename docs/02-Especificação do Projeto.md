@@ -1,5 +1,5 @@
 
-## Especificação de requisitos
+## Especificação de Requisitos
 
 ### ATA
 Data: 06 de março de 2023
