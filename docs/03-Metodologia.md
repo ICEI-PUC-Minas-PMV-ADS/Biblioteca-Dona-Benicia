@@ -74,6 +74,6 @@ As ferramentas empregadas no projeto são:
 -  Editor de código: Visual Studio.
 - Ferramentas de comunicação: Microsoft Teams
 - Ferramentas para criação de diagramas: brModelo, StarUML, LucidApp 
-- Ferramentas de desenho de tela (_wireframing_): figma
+- Ferramentas de desenho de tela (_wireframing_): Figma
 
 
