@@ -24,7 +24,10 @@ https://github.com/ICEI-PUC-Minas-PMV-ADS/Biblioteca-Dona-Benicia/assets/8093214
 Acesso ao Administrador 
 
 
-https://github.com/ICEI-PUC-Minas-PMV-ADS/Biblioteca-Dona-Benicia/assets/80932145/a89548eb-11d7-43b1-9623-5a91875063c1
+
+https://github.com/ICEI-PUC-Minas-PMV-ADS/Biblioteca-Dona-Benicia/assets/80932145/22202979-3bc2-4ca8-9bf5-54f8bfdb4602
+
+
 
 
 
