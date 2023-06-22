@@ -4,6 +4,25 @@
 
 Layout padrão do site (HTML e CSS) que será utilizado em todas as páginas com a definição de identidade visual, aspectos de responsividade e iconografia.
 
+
+
+
+# A importância da paleta de cores
+
+As cores não servem apenas para deixar um site mais bonito, elas foram escolhidas também para fazerem com que nossos usuários associem a alguma sensação positiva.
+
+As cores predominantes que utilizamos nesse projeto partem do Azul e Verde. Criamos uma paleta de cores, que nada mais é do que um conjunto de cores que combinam entre si e podem criar composições harmoniosas. 
+
+## Azul
+O azul é uma cor popularmente conhecida por transmitir as sensações de paz e tranquilidade.  Além disso, estimula a criatividade e, por ser uma cor pouco invasiva, é muito usada pelas redes sociais, por exemplo.
+
+
+## Verde
+
+O verde evoca tranquilidade, segurança, equilíbrio; comumente associada à natureza, é uma cor com efeitos calmantes, usada principalmente com o objetivo de relaxar.
+
+Depois de analisar semânticamente o significado que queríamos transmitir ao usuário, criamos a paleta de cores na ferramenta Adobe color. https://color.adobe.com/pt/create/color-wheel
+
 > **Links Úteis**:
 >
 > - [CSS Website Layout (W3Schools)](https://www.w3schools.com/css/css_website_layout.asp)
