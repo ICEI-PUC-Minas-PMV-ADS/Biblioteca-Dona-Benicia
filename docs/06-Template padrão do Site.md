@@ -21,7 +21,7 @@ O azul é uma cor popularmente conhecida por transmitir as sensações de paz e 
 
 O verde evoca tranquilidade, segurança, equilíbrio; comumente associada à natureza, é uma cor com efeitos calmantes, usada principalmente com o objetivo de relaxar.
 
-Depois de analisar semânticamente o significado que queríamos transmitir ao usuário, criamos a paleta de cores na ferramenta Adobe color. https://color.adobe.com/pt/create/color-wheel
+Depois de analisar semânticamente o significado que queríamos transmitir ao usuário, criamos a paleta de cores na ferramenta [Adobe color.](https://color.adobe.com/pt/create/color-wheel)
 
 > **Links Úteis**:
 >
