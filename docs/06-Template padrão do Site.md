@@ -2,9 +2,14 @@
 
 <span style="color:red">Pré-requisitos: <a href="2-Especificação do Projeto.md"> Especificação do Projeto</a></span>, <a href="3-Projeto de Interface.md"> Projeto de Interface</a>, <a href="4-Metodologia.md"> Metodologia</a>
 
+
 Layout padrão do site (HTML e CSS) que será utilizado em todas as páginas com a definição de identidade visual, aspectos de responsividade e iconografia.
 
+Para gerarmos o template, levamos em conta o visual, as funções e a performance na elaboração. Focamos na tarefa de entregar um produto visual e funcional. 
 
+No visual optamos por linhas retas, com navegabilidade intuitiva e de fácil utilização para nossos usuários. Colocamos a barra de pesquisa na parte superior e guias clicáveis ​​no centro da página.
+
+Porém, não poderíamos deixar a performance de lado. Optamos por um tema simples para não adicionar plugins, que podem deixar o site pesado, e que atrapalha a experiência de navegação.
 
 
 # A paleta de cores
