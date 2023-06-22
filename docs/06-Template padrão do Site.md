@@ -7,7 +7,7 @@ Layout padrão do site (HTML e CSS) que será utilizado em todas as páginas com
 
 
 
-# A importância da paleta de cores
+# A paleta de cores
 
 As cores não servem apenas para deixar um site mais bonito, elas foram escolhidas também para fazerem com que nossos usuários associem a alguma sensação positiva.
 
