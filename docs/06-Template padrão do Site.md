@@ -23,6 +23,8 @@ O verde evoca tranquilidade, segurança, equilíbrio; comumente associada à nat
 
 Depois de analisar semânticamente o significado que queríamos transmitir ao usuário, criamos a paleta de cores na ferramenta [Adobe color.](https://color.adobe.com/pt/create/color-wheel)
 
+![AdobeColor-My Color Theme](https://github.com/ICEI-PUC-Minas-PMV-ADS/Biblioteca-Dona-Benicia/assets/81052476/a0e815cf-4420-4eea-85cc-f144863a9e8f)
+
 > **Links Úteis**:
 >
 > - [CSS Website Layout (W3Schools)](https://www.w3schools.com/css/css_website_layout.asp)
