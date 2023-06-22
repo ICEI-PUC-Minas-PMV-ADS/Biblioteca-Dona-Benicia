@@ -2,7 +2,7 @@
 # Projeto de Interface
 
 
-## User Flow acesso dispositivo movel (Celular) 
+## User Flow acesso dispositivo móvel
 
 ![Exemplo de UserFlow](https://github.com/ICEI-PUC-Minas-PMV-ADS/Biblioteca-Dona-Benicia/blob/main/docs/img/flowuser.jpeg)
 
