@@ -36,7 +36,7 @@ const PrivateRoute: React.FC<PrivateRouteProps> = ({
   return isAuthenticated ? (
     <Component />
   ) : (
-    <Navigate to="/login" replace state={{ from: rest.path }} />
+    <Navigate to="/admin/login" replace state={{ from: rest.path }} />
   );
 };
 
@@ -57,7 +57,7 @@ function App() {
           />
           <Route
             path="/EmprestimoAdmin"
-            element={<PrivateRoute component={Home} path="/admin/EmprestimoAdmin" />}
+            element={<PrivateRoute component={EmprestimoAdmin} path="/EmprestimoAdmin" />}
           />
           <Route
             path="/Reservas"

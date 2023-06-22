@@ -1,5 +1,5 @@
 import { useState, useEffect} from "react";
-import Header from "../header";
+import Header from "../headerAdmin";
 import Footer from "../footer";
 import { FaSpinner } from "react-icons/fa";
 import axiosInstance from "../../axios";

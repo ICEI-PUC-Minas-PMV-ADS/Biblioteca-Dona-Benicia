@@ -42,7 +42,7 @@ const Person: React.FC = () => {
       console.log("Usuário cadastrado com sucesso!");
       console.log(response.data);
       limparInputs();
-      navigate("/login");
+      navigate("/");
 
     } catch (error: any) {
       if (error.response && error.response.status === 401) {

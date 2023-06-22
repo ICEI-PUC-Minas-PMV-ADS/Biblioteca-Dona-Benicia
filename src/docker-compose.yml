@@ -29,18 +29,18 @@ services:
       - "8000:8000"
     networks:
       - nt
-  # app:
-  #   build:
-  #     context: ./web
-  #   command: npm run dev
-  #   image: vite-react-express:latest
-  #   environment:
-  #     - FAST_API=http://fast-api:8000
-  #     #- FAST_API=https://donabenicia-dev.azurewebsites.net
-  #   ports:
-  #     - '3000:3000'
-  #   networks:
-  #       - nt
+  app:
+    build:
+      context: ./web
+    command: npm run dev
+    image: vite-react-express:latest
+    environment:
+      - FAST_API=http://fast-api:8000
+      #- FAST_API=https://donabenicia-dev.azurewebsites.net
+    ports:
+      - '3000:3000'
+    networks:
+        - nt
 
 
 networks:

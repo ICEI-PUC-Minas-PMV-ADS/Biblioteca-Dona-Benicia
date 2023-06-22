@@ -59,7 +59,7 @@ const Login: React.FC = () => {
             Entrar
           </h2>
           <p className="mt-10 text-center text-sm font-medium leading-6 tracking-tight text-texto">
-            Entrar na sua conta de usuário
+            Entrar na sua conta de administrador
           </p>
 
           <form className="space-y-6" onSubmit={handleLogin}>
@@ -83,12 +83,7 @@ const Login: React.FC = () => {
                 Password
               </label>
               <div className="text-sm">
-                <a
-                  href="/Cadastro"
-                  className="font-semibold text-indigo-600 hover:text-indigo-500"
-                >
-                  não possui cadastro?
-                </a>
+                
               </div>
             </div>
 

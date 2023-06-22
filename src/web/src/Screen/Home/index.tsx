@@ -24,24 +24,14 @@ const people = [
     role: <FaFileAlt className="text-white text-2xl" />,
     path: "/EmprestimoAdmin",
   },
+  
   {
     id:"4",
-    name: "Emissão de multa",
-    role: <FaMoneyBill className="text-white text-2xl" />,
-    path: "/Multa",
-  },
-  {
-    id:"5",
     name: "Cadastro de usuário",
     role: <BsPersonPlusFill className="text-white text-2xl" />,
-    path: "login",
+    path: "/person",
   },
-  {
-    id:"6",
-    name: "Bloqueio e desbloqueio de usuário",
-    role: <RiLock2Line className="text-white text-2xl" />,
-    path: "",
-  },
+  
 ];
 
 export default function Home() {
