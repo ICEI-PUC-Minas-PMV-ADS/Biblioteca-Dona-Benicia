@@ -11,6 +11,11 @@ No visual optamos por linhas retas, com navegabilidade intuitiva e de fácil uti
 
 Porém, não poderíamos deixar a performance de lado. Optamos por um tema simples para não adicionar plugins, que podem deixar o site pesado, e que atrapalha a experiência de navegação.
 
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/Biblioteca-Dona-Benicia/assets/81052476/f08751d3-e2cd-43c4-b0fd-eb726816ffb2)
+
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/Biblioteca-Dona-Benicia/assets/81052476/651a2d5f-3acc-4adf-ade0-af829964b237)
+
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/Biblioteca-Dona-Benicia/assets/81052476/2db8e11f-c1eb-42d0-bb7e-97f541a61869)
 
 # A paleta de cores
 
