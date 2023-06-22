@@ -30,11 +30,11 @@ Desenvolvemos nosso site capaz de responder da maneira ideal quando um usuário 
 
 As cores não servem apenas para deixar um site mais bonito, elas foram escolhidas também para fazerem com que nossos usuários associem a alguma sensação positiva. As cores predominantes que utilizamos nesse projeto partem do Azul e Verde. Criamos uma paleta de cores, que nada mais é do que um conjunto de cores que combinam entre si e podem criar composições harmoniosas. 
 
-## Azul :blue_book:
+## Azul blue_book:
 O azul é uma cor popularmente conhecida por transmitir as sensações de paz e tranquilidade.  Além disso, estimula a criatividade e, por ser uma cor pouco invasiva, é muito usada pelas redes sociais, por exemplo.
 
 
-## Verde :green_book:
+## Verde green_book:
 
 O verde evoca tranquilidade, segurança, equilíbrio; comumente associada à natureza, é uma cor com efeitos calmantes, usada principalmente com o objetivo de relaxar.
 
