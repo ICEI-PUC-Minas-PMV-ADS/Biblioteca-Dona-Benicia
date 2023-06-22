@@ -36,6 +36,22 @@ https://github.com/ICEI-PUC-Minas-PMV-ADS/Biblioteca-Dona-Benicia/blob/develop/s
 
 ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/Biblioteca-Dona-Benicia/assets/81052476/3b44beaf-fa79-435c-a22d-793a0888e261)
 
+## Perfil Admin
+
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/Biblioteca-Dona-Benicia/blob/main/docs/img/I01_Admin.PNG)
+
+### Inclusão de Obra - Perfil Admin
+
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/Biblioteca-Dona-Benicia/blob/main/docs/img/I02_Admin_Inclus%C3%A3o_de_Obra.PNG)
+
+### Consulta Acervo - Perfil Admin
+
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/Biblioteca-Dona-Benicia/blob/main/docs/img/I03_Admin_Consulta_Acervo.PNG)
+
+### Emissão de Multa - Perfil Admin
+
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/Biblioteca-Dona-Benicia/blob/main/docs/img/I04_Admin_Emiss%C3%A3o_Multa.PNG)
+
 
 > **Links Úteis**:
 > - [Ferramentas de Test para Java Script](https://geekflare.com/javascript-unit-testing/)
