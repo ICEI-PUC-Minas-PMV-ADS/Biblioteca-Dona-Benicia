@@ -17,6 +17,11 @@ Porém, não poderíamos deixar a performance de lado. Optamos por um tema simpl
 
 ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/Biblioteca-Dona-Benicia/assets/81052476/2db8e11f-c1eb-42d0-bb7e-97f541a61869)
 
+
+# Responsividade
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/Biblioteca-Dona-Benicia/assets/81052476/a6e53a2a-3929-4837-bbd8-c81e799fc522)
+
+
 # A paleta de cores
 
 As cores não servem apenas para deixar um site mais bonito, elas foram escolhidas também para fazerem com que nossos usuários associem a alguma sensação positiva. As cores predominantes que utilizamos nesse projeto partem do Azul e Verde. Criamos uma paleta de cores, que nada mais é do que um conjunto de cores que combinam entre si e podem criar composições harmoniosas. 
