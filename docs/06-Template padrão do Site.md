@@ -19,6 +19,10 @@ Porém, não poderíamos deixar a performance de lado. Optamos por um tema simpl
 
 
 # Responsividade
+
+
+Desenvolvemos nosso site capaz de responder da maneira ideal quando um usuário acessar a página usando dispositivos móveis para facilitar a sua visualização.
+
 ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/Biblioteca-Dona-Benicia/assets/81052476/a6e53a2a-3929-4837-bbd8-c81e799fc522)
 
 
