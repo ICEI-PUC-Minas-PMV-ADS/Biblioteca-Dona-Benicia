@@ -143,6 +143,14 @@ RF-011| Usuário | Sugestões de Obras: Envio de Sugestão de Aquisição de Obr
 
 ![Processo de empréstimos de livros Diagrama](https://github.com/ICEI-PUC-Minas-PMV-ADS/Biblioteca-Dona-Benicia/assets/80931501/731cae12-aeb6-4eea-bbf7-a6847a4cf0b1)
 
+2) Processo de devolução de livros:
+   
+![Devolução de empréstimos  Diagrama](https://github.com/ICEI-PUC-Minas-PMV-ADS/Biblioteca-Dona-Benicia/assets/80931501/2201ded8-4b44-4e8d-b06f-b955bb771ce6)
+
+3) Processo de atualização de acervo:
+   
+![Inclusão no Acervo Diagrama](https://github.com/ICEI-PUC-Minas-PMV-ADS/Biblioteca-Dona-Benicia/assets/80931501/b29507f8-b0c0-40f3-8e18-f8861f2fc90e)
+
 ### Requisitos não Funcionais
 
 Os requisitos não funcionais definem propriedades e restrições do sistema ou de parte dele. No entanto, ao contrário dos requisitos funcionais, os requisitos não funcionais não tratam de funcionalidades do sistema mas são extremamente necessários para que o software atenda seu propósito. A seguir foram listados os Requisitos Não Funcionais levantados para o desenvolvimento do sistema:
