@@ -137,7 +137,9 @@ Na tabela a seguir é possível fazer um compilado com os principais requisitos 
 |RF-010| Usuário | Empréstimo de Obras: Empréstimo de obras, assinatura de periódicos, Reserva de Obras, Acompanhamento de Fila de Espera de obra, Renovação de empréstimos, Solicitação de pagamento de multa, Informações de perda de obra | ALTA |
 RF-011| Usuário | Sugestões de Obras: Envio de Sugestão de Aquisição de Obras | ALTA
 
+### Fluxos de processo
 
+![Processo de empréstimos de livros Diagrama](https://github.com/ICEI-PUC-Minas-PMV-ADS/Biblioteca-Dona-Benicia/assets/80931501/731cae12-aeb6-4eea-bbf7-a6847a4cf0b1)
 
 ### Requisitos não Funcionais
 
