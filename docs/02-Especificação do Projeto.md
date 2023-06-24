@@ -139,6 +139,8 @@ RF-011| Usuário | Sugestões de Obras: Envio de Sugestão de Aquisição de Obr
 
 ### Fluxos de processo
 
+1) Processo de empréstimo de livros:
+
 ![Processo de empréstimos de livros Diagrama](https://github.com/ICEI-PUC-Minas-PMV-ADS/Biblioteca-Dona-Benicia/assets/80931501/731cae12-aeb6-4eea-bbf7-a6847a4cf0b1)
 
 ### Requisitos não Funcionais
