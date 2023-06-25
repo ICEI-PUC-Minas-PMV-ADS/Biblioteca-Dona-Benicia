@@ -7,7 +7,7 @@
 ![Exemplo de UserFlow](https://github.com/ICEI-PUC-Minas-PMV-ADS/Biblioteca-Dona-Benicia/blob/main/docs/img/flowuser.jpeg)
 
 
-## Wireframes Prototipado Usiario/Administrador
+## Wireframes Prototipado Usuário/Administrador
 
 
 Acesso ao Usuario 
