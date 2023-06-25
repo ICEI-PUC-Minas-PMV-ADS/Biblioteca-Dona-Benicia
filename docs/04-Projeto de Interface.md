@@ -10,7 +10,7 @@
 ## Wireframes Prototipado Usuário/Administrador
 
 
-Acesso ao Usuario 
+Acesso ao Usuário 
 
 https://github.com/ICEI-PUC-Minas-PMV-ADS/Biblioteca-Dona-Benicia/assets/80932145/4607878e-b79b-424a-ad70-779394d26c94
 
