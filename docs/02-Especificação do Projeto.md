@@ -44,7 +44,7 @@ Participantes:
 
 | Nome                               | E-mail                          | Papel         |
 | ---------------------------------- | ------------------------------ | ------------- |
-| Sergio Rafael                      |                                | Diretor da escola |
+| Sergio Rafael                      | escola.2313@educacao.mg.gov.br   | Diretor da escola |
 | Daiane Aparecida Rocha Cardoso     | 1335058@sga.pucminas.br        | Desenvolvedora |
 | Janaina Jamarino Rosa Fernandez    | Janaina.jamarino@sga.pucminas.br| Desenvolvedora |
 | Luiza Jamarino Rosa Grigorio       | 1330157@sga.pucminas.br        | Desenvolvedora |
